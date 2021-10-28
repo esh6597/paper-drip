@@ -1,0 +1,22 @@
+// Colors
+$color-warm-light: #ffb5b7;
+$color-warm: #dd5964;
+$color-warm-dark: #9e4450;
+
+$color-cool-light: #88d5c2;
+$color-cool: #33bb99;
+$color-cool-dark: #31a280;
+
+$color-text: #40373a;
+$color-background: #fcedc9;
+
+:export {
+    colorWarmLight: $color-warm-light;
+    colorWarm: $color-warm;
+    colorWarmDark: $color-warm-dark;
+    colorCoolLight: $color-cool-light;
+    colorCool: $color-cool;
+    colorCoolDark: $color-cool-dark;
+    colorText: $color-text;
+    colorBackground: $color-background;
+}

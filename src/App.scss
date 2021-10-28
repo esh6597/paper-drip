@@ -1,0 +1,68 @@
+// Variables
+
+// Fonts
+$font-text-light: 200 20px/1 'Mukta', sans-serif;
+$font-text: 300 20px/1 'Mukta', sans-serif;
+$font-text-bold: 400 20px/1 'Mukta', sans-serif;
+$font-text-thick: 700 25px/1 'Mukta', sans-serif;
+
+$font-title-light: 300 30px/1.5 'Roboto', sans-serif;
+$font-title: 400 30px/1.5 'Roboto', sans-serif;
+$font-title-bold: 500 30px/1.5 'Roboto', sans-serif;
+$font-title-large: 700 40px/2 'Roboto', sans-serif;
+
+// Colors
+$color-warm-light: #f686ba;
+$color-warm: #dd5964;
+$color-warm-dark: #9e4450;
+
+$color-cool-light: #88d5cd;
+$color-cool: #33b8b8;
+$color-cool-dark: #319ea2;
+
+$color-text: #40373a;
+$color-background: #fcedc9;
+
+// Style
+
+.App {
+    background-color: $color-background;
+    font: $font-text;
+    color: $color-warm-dark;
+}
+
+h1 {
+    font: $font-title-large;
+    color: $color-warm;
+}
+
+h3 {
+    font: $font-text-thick;
+    color: $color-warm;
+}
+
+.sidebar {
+    box-sizing: border-box;
+    border-top: 32px solid $color-cool-dark;
+}
+
+.sidebarButton {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: $color-cool-dark;
+    border: none;
+    padding: 0;
+    color: $color-text;
+    z-index: 2;
+
+    * {
+        color: $color-background;
+    }
+}
+
+.splash {
+    width: 100%;
+    min-height: 70%;
+    background-color: $color-cool;
+}
