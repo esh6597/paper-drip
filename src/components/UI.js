@@ -6,7 +6,7 @@ import variables from '../variables.module.scss';
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Sidebar from 'react-sidebar';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import Header from './Header';
 import Footer from './Footer';
@@ -69,31 +69,45 @@ class UI extends Component {
                 <Sidebar
                     sidebar={
                         <div className='sidebar'>
-                            <NavLink className="nav-link" to="/about">
+                            <Link className="nav-link" to="/home">
+                                Home
+                            </Link>
+                            <Link className="nav-link" to="/about">
                                 About
-                            </NavLink>
+                            </Link>
+                            <Link className="nav-link" to="/blog">
+                                Blog
+                            </Link>
+                            <Link className="nav-link" to="/shop">
+                                Shop
+                            </Link>
                         </div>
                     }
+                    shadow={false}
                     open={this.state.sidebarOpen}
                     onSetOpen={this.onSetSidebarOpen}
                     styles={{
                         sidebar: { 
                             background: variables.colorBackground,
-                            padding: 0
+                            padding: 0,
+                            transition: "transform .2s ease-in-out",
+                            WebkitTransition: "-webkit-transform .2s ease-in-out"
                         } 
                     }}
                 >
                     <div onClick={() => this.toggleSidebar()} className='sidebarButton'>
                         <BsList style={{fontSize: 32}} />
                     </div>
-                    <Switch>
-                        <Route path='/home' component={HomePage} />
-                        <Route exact path='/about' render={() => <About />} />
-                        <Route exact path='/blog' render={() => <Blog articles={0} />} />
-                        <Route exact path='/shop' render={() => <Shop items={0} />} />
-                        <Redirect to='/home' />
-                    </Switch>
-                    <Footer />
+                    <div className='content'>
+                        <Switch>
+                            <Route path='/home' component={HomePage} />
+                            <Route exact path='/about' render={() => <About />} />
+                            <Route exact path='/blog' render={() => <Blog articles={this.state.articles} />} />
+                            <Route exact path='/shop' render={() => <Shop items={this.state.items} />} />
+                            <Redirect to='/home' />
+                        </Switch>
+                        <Footer />
+                    </div>
                 </Sidebar>
             </div>
         );

@@ -2,7 +2,9 @@ import React from 'react';
 
 function Shop(props) {
     return (
-        <div></div>
+        <div>
+            <h1>Shop</h1>
+        </div>
     );
 }
 
