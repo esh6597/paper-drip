@@ -165,3 +165,11 @@ p {
 .about {
   background-image: linear-gradient(to right, #f68e86, #88d5cd);
 }
+
+.blog {
+  background-image: linear-gradient(to right, #319ea2, #88d5cd, #319ea2);
+}
+
+.shop {
+  background-image: linear-gradient(to right, #9e4450, #f68e86, #9e4450);
+}

@@ -215,3 +215,11 @@ p {
 .about {
     background-image: linear-gradient(to right, $color-warm-light, $color-cool-light);
 }
+
+.blog {
+    background-image: linear-gradient(to right, $color-cool-dark, $color-cool-light, $color-cool-dark);
+}
+
+.shop {
+    background-image: linear-gradient(to right, $color-warm-dark, $color-warm-light, $color-warm-dark);
+}
