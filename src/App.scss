@@ -41,7 +41,7 @@ h2 {
 
 h3 {
     font: $font-text-thick;
-    margin: 0 0 5vh 0;
+    margin: 0 0 3vh 0;
 }
 
 p {
@@ -78,7 +78,7 @@ p {
 
     .card-img-top {
         border-radius: 50%;
-        width: 75%;
+        width: 50%;
     }
 
     .card-text {
@@ -90,7 +90,7 @@ p {
 .header {
     display: block;
     position: relative;
-    margin-bottom: 2vh;
+    margin-bottom: 3vh;
     color: $color-background;
     min-height: 20vh;
 
@@ -173,7 +173,7 @@ p {
 .splash {
     display: block;
     position: relative;
-    margin-bottom: 2vh;
+    margin-bottom: 3vh;
     background-image: radial-gradient($color-cool-light, $color-cool-dark);
     color: $color-background;
     min-height: 60vh;

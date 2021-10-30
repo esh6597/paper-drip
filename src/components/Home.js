@@ -2,7 +2,6 @@ import React from 'react';
 import { baseUrl } from '../shared/baseUrl';
 import { Link } from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
-import About from './About';
 
 function Splash() {
     return (
@@ -51,35 +50,41 @@ function Sections() {
             </div>
             <div className="row">
                 <div className="col-12 col-md-4">
-                    <Card>
-                        <Card.Img variant="top" src={baseUrl + 'media/images/about.png'} />
-                        <Card.Title>About</Card.Title>
-                        <Card.Body>
-                            <Card.Text>Learn about the site and its author, see some other things I've done, or contact me.</Card.Text>
-                        </Card.Body>
-                    </Card>
+                    <Link to="/about">
+                        <Card>
+                            <Card.Img variant="top" src={baseUrl + 'media/images/about.png'} />
+                            <Card.Title>About</Card.Title>
+                            <Card.Body>
+                                <Card.Text>Learn about the site and its author, see some other things I've done, or contact me.</Card.Text>
+                            </Card.Body>
+                        </Card>
+                    </Link>
                 </div>
                 <div className="col-12 col-md-4">
-                    <Card>
-                        <Card.Img variant="top" src={baseUrl + 'media/images/blog.png'} />
-                        <Card.Title>Blog</Card.Title>
-                        <Card.Body>
-                            <Card.Text>Learn about origami's history, future, or even its unconventional applications! 
-                                You can also find all of my tutorials here.
-                            </Card.Text>
-                        </Card.Body>
-                    </Card>
+                    <Link to="/blog">
+                        <Card>
+                            <Card.Img variant="top" src={baseUrl + 'media/images/blog.png'} />
+                            <Card.Title>Blog</Card.Title>
+                            <Card.Body>
+                                <Card.Text>Learn about origami's history, future, or even its unconventional applications! 
+                                    You can also find all of my tutorials here.
+                                </Card.Text>
+                            </Card.Body>
+                        </Card>
+                    </Link>
                 </div>
                 <div className="col-12 col-md-4">
-                    <Card>
-                        <Card.Img variant="top" src={baseUrl + 'media/images/shop.png'} />
-                        <Card.Title>Shop</Card.Title>
-                        <Card.Body>
-                            <Card.Text>Want to support me directly? Feel free to browse some of the origami-related 
-                                art I've made! This section barely exists, so don't expect much.
-                            </Card.Text>
-                        </Card.Body>
-                    </Card>
+                    <Link to="/shop">
+                        <Card>
+                            <Card.Img variant="top" src={baseUrl + 'media/images/shop.png'} />
+                            <Card.Title>Shop</Card.Title>
+                            <Card.Body>
+                                <Card.Text>Want to support me directly? Feel free to browse some of the origami-related 
+                                    art I've made! This section barely exists, so don't expect much.
+                                </Card.Text>
+                            </Card.Body>
+                        </Card>
+                    </Link>
                 </div>
             </div>
         </div>
