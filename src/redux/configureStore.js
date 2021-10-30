@@ -4,10 +4,10 @@ import thunk from 'redux-thunk';
 import logger from 'redux-logger';
 
 //Reducers
-import { Articles } from './reducers/articles';
-import { Items } from './reducers/items';
-import { Comments } from './reducers/comments';
-import { Reviews } from './reducers/reviews';
+import { Articles } from './articles';
+import { Items } from './items';
+import { Comments } from './comments';
+import { Reviews } from './reviews';
 
 export const ConfigureStore = () => {
     const store = createStore(

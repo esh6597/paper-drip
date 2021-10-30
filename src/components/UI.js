@@ -102,7 +102,7 @@ class UI extends Component {
                         <Switch>
                             <Route path='/home' component={HomePage} />
                             <Route exact path='/about' render={() => <About />} />
-                            <Route exact path='/blog' render={() => <Blog articles={this.state.articles} />} />
+                            <Route exact path='/blog' render={() => <Blog articles={this.props.articles} />} />
                             <Route exact path='/shop' render={() => <Shop items={this.state.items} />} />
                             <Redirect to='/home' />
                         </Switch>

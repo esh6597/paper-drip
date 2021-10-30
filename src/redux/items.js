@@ -1,9 +1,9 @@
-import * as ActionTypes from '../ActionTypes';
+import * as ActionTypes from './ActionTypes';
 
-export const Reviews = (state = {
+export const Items = (state = {
     isLoading: true,
     errMess: null,
-    reviews: []
+    items: []
 }, action) => {
     switch (action.type) {
         default:
