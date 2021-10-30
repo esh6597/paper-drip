@@ -1,10 +1,9 @@
-import React, { Component, useState } from 'react';
+import React, { useState } from 'react';
 import { baseUrl } from '../shared/baseUrl';
 import { Loading } from './Loading';
 import Card from 'react-bootstrap/Card';
 import ToggleButtonGroup from 'react-bootstrap/ToggleButtonGroup';
 import ToggleButton from 'react-bootstrap/ToggleButton';
-import Badge from 'react-bootstrap/Badge';
 
 function IsLoading(props) {
     if (props.isLoading) {
@@ -72,29 +71,6 @@ function IsLoading(props) {
             <React.Fragment>
                 {articles}
             </React.Fragment>
-        );
-    }
-}
-
-function FilterArticle(props) {
-    if (props.tag.length > 0) {
-        const filter = props.tag.filter(tag =>
-            props.article.tag.includes(tag)
-        );
-        if (filter.length === props.tag.length) {
-            return (
-                <Card>
-
-                </Card>
-            );
-        }
-    } else {
-        return (
-            <div className="col-12 col-sm-6 col-md-4">
-                <Card>
-                    <Card.Img variant="top" src={baseUrl + props.article.image} />
-                </Card>
-            </div>
         );
     }
 }

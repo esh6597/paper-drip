@@ -1,6 +1,8 @@
 import * as ActionTypes from './ActionTypes';
 import { baseUrl } from '../shared/baseUrl';
 
+// BLOG ARTICLES
+
 export const fetchArticles = () => dispatch => {
 
     dispatch(articlesLoading);
@@ -34,5 +36,43 @@ export const addArticles = articles => ({
 
 export const articlesFailed = errMess => ({
     type: ActionTypes.ARTICLES_FAILED,
+    payload: errMess
+});
+
+//STORE ITEMS
+
+export const fetchItems = () => dispatch => {
+
+    dispatch(itemsLoading);
+
+    return fetch(baseUrl + 'items')
+        .then(response => {
+            if (response.ok) {
+                return response;
+            } else {
+                const error = new Error(`Error ${response.status}: ${response.statusText}`);
+                error.response = response;
+                throw error;
+            }
+        }, error => {
+            const errMess = new Error(error.message);
+            throw errMess;
+        })
+        .then(response => response.json())
+        .then(articles => dispatch(addItems(articles)))
+        .catch(error => dispatch(itemsFailed(error.message)));
+};
+
+export const itemsLoading = () => ({
+    type: ActionTypes.ITEMS_LOADING
+});
+
+export const addItems = items => ({
+    type: ActionTypes.ADD_ITEMS,
+    payload: items
+});
+
+export const itemsFailed = errMess => ({
+    type: ActionTypes.ITEMS_FAILED,
     payload: errMess
 });

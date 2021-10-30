@@ -15,7 +15,7 @@ import About from './About';
 import Blog from './Blog';
 import Shop from './Shop';
 
-import { fetchArticles } from '../redux/ActionCreators';
+import { fetchArticles, fetchItems } from '../redux/ActionCreators';
 
 import { BsList } from 'react-icons/bs';
 
@@ -29,7 +29,8 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = {
-    fetchArticles: () => (fetchArticles())
+    fetchArticles: () => (fetchArticles()),
+    fetchItems: () => (fetchItems())
 };
 
 class UI extends Component {
@@ -46,6 +47,7 @@ class UI extends Component {
 
     componentDidMount() {
         this.props.fetchArticles();
+        this.props.fetchItems();
     }
 
     onSetSidebarOpen(open) {
@@ -103,7 +105,7 @@ class UI extends Component {
                             <Route path='/home' component={HomePage} />
                             <Route exact path='/about' render={() => <About />} />
                             <Route exact path='/blog' render={() => <Blog articles={this.props.articles} />} />
-                            <Route exact path='/shop' render={() => <Shop items={this.state.items} />} />
+                            <Route exact path='/shop' render={() => <Shop items={this.props.items} />} />
                             <Redirect to='/home' />
                         </Switch>
                         <Footer />
