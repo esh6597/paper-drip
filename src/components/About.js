@@ -61,6 +61,12 @@ function About(props) {
                     </div>
                 </div>
                 <div className="row">
+                    <div className="col">
+                        <h3>Contact Me</h3>
+                        <p>Contact form coming soon!</p>
+                    </div>
+                </div>
+                <div className="row">
                     <div className="col-12">
                         <h3>Like what you see? Check out these sister websites!</h3>
                         <p>Links are currently in progress; expect some jankiness.</p>
@@ -68,28 +74,78 @@ function About(props) {
                 </div>
                 <div className="row">
                     <div className="col-12 col-sm-6 col-md-4">
-                        <Card>
-                            <Card.Img variant="top" src={baseUrl + 'media/images/about.png'} />
-                            <Card.Title>About</Card.Title>
-                            <Card.Body>
-                                <Card.Text>Learn about the site and its author, see some other things I've done, or contact me.</Card.Text>
-                            </Card.Body>
-                        </Card>
+                        <a href="https://www.youtube.com/channel/UCqsDIfnb7emiIXvb3VXpHVA">
+                            <Card>
+                                <Card.Img variant="top" src={baseUrl + 'media/images/youtube.png'} />
+                                <Card.Title>Youtube</Card.Title>
+                                <Card.Body>
+                                    <Card.Text>Why sift through wordy blog posts when you can watch all of my tutorials for free on Youtube?</Card.Text>
+                                </Card.Body>
+                            </Card>
+                        </a>
                     </div>
                     <div className="col-12 col-sm-6 col-md-4">
-                        
+                        <a href="">
+                            <Card>
+                                <Card.Img variant="top" src={baseUrl + 'media/images/patreon.png'} />
+                                <Card.Title>Patreon</Card.Title>
+                                <Card.Body>
+                                    <Card.Text>Directly support the expansion of this website with just $5 on Patreon and reap SWEET 
+                                        benefits while you're at it.
+                                    </Card.Text>
+                                </Card.Body>
+                            </Card>
+                        </a>
                     </div>
                     <div className="col-12 col-sm-6 col-md-4">
-                        
+                        <a href="">
+                            <Card>
+                                <Card.Img variant="top" src={baseUrl + 'media/images/portfolio.png'} />
+                                <Card.Title>Portfolio</Card.Title>
+                                <Card.Body>
+                                    <Card.Text>Hiring, or just curious? Check out my non-origami creations 
+                                        here: paintings, digital art, web development, and more. Note: 
+                                        website currently doesn't exist.
+                                    </Card.Text>
+                                </Card.Body>
+                            </Card>
+                        </a>
                     </div>
                     <div className="col-12 col-sm-6 col-md-4">
-                        
+                        <a href="">
+                            <Card>
+                                <Card.Img variant="top" src={baseUrl + 'media/images/circle-brown.png'} />
+                                <Card.Title>Dummy Link</Card.Title>
+                                <Card.Body>
+                                    <Card.Text>Hehe dummy
+                                    </Card.Text>
+                                </Card.Body>
+                            </Card>
+                        </a>
                     </div>
                     <div className="col-12 col-sm-6 col-md-4">
-                        
+                        <a href="">
+                            <Card>
+                                <Card.Img variant="top" src={baseUrl + 'media/images/circle-red.png'} />
+                                <Card.Title>Dummy Link</Card.Title>
+                                <Card.Body>
+                                    <Card.Text>Hehe dummy
+                                    </Card.Text>
+                                </Card.Body>
+                            </Card>
+                        </a>
                     </div>
                     <div className="col-12 col-sm-6 col-md-4">
-                        
+                        <a href="">
+                            <Card>
+                                <Card.Img variant="top" src={baseUrl + 'media/images/circle-blue.png'} />
+                                <Card.Title>Dummy Link</Card.Title>
+                                <Card.Body>
+                                    <Card.Text>Hehe dummy
+                                    </Card.Text>
+                                </Card.Body>
+                            </Card>
+                        </a>
                     </div>
                 </div>
             </div>
