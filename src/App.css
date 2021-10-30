@@ -176,6 +176,7 @@ p {
 .blog .btn-outline-primary {
   border-color: #319ea2;
   color: #319ea2;
+  margin: 3vh 0 5vh 0;
 }
 .blog .btn-check:checked + .btn-outline-primary {
   background-color: #319ea2;
@@ -186,6 +187,48 @@ p {
   background-color: #319ea2;
   border-color: #319ea2;
   color: #fcedc9;
+}
+.blog .card {
+  margin: 10px;
+  background-color: rgba(0, 0, 0, 0);
+  border: 1px solid #319ea2;
+  opacity: 70%;
+  align-items: center;
+  height: 95%;
+  width: 100%;
+}
+.blog .card:hover {
+  opacity: 100%;
+}
+.blog .card .card-title {
+  text-align: center;
+  margin-top: 2.5vh;
+  font: 400 20px/1.2 "Mukta", sans-serif;
+  color: #40373a;
+}
+.blog .card .card-img-top {
+  border-radius: 0%;
+  width: 100%;
+  height: 50%;
+  object-fit: cover;
+}
+.blog .card .card-text {
+  font: 300 16px/1.2 "Mukta", sans-serif;
+  object-fit: cover;
+  height: 40%;
+}
+.blog .card .card-body {
+  padding: 0 2vh;
+}
+.blog .card .bottom {
+  color: #319ea2;
+  font: 300 16px/1.2 "Mukta", sans-serif;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  margin-bottom: 10px;
 }
 
 .shop {

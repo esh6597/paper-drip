@@ -4,6 +4,7 @@ import { Loading } from './Loading';
 import Card from 'react-bootstrap/Card';
 import ToggleButtonGroup from 'react-bootstrap/ToggleButtonGroup';
 import ToggleButton from 'react-bootstrap/ToggleButton';
+import Badge from 'react-bootstrap/Badge';
 
 function TagGroup() {
     const [tag, setValue] = useState('all');
@@ -65,9 +66,16 @@ function IsLoading(props) {
 
     const articles = props.articles.map(article => {
         return (
-            <div key={article.id} className="col-12 col-sm-6 col-md-4">
+            <div key={article.id} className="col-12 col-md-6 col-lg-4">
                 <Card>
                     <Card.Img variant="top" src={baseUrl + article.image} />
+                    <Card.Body>
+                        <Card.Title>{article.title}</Card.Title>
+                        <Card.Text>{article.summary.slice(0,150) + '...'}</Card.Text>
+                    </Card.Body>
+                    <Card.Body>
+                        <p className="bottom">{article.tag.toUpperCase()}</p>
+                    </Card.Body>
                 </Card>
             </div>
         );
