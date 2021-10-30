@@ -273,7 +273,8 @@ p {
         .card-text {
             font: $font-text-small;
             object-fit: cover;
-            height: 40%;
+            height: 60%;
+            align-content: center;
         }
 
         .card-body {

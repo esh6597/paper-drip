@@ -215,7 +215,8 @@ p {
 .blog .card .card-text {
   font: 300 16px/1.2 "Mukta", sans-serif;
   object-fit: cover;
-  height: 40%;
+  height: 60%;
+  align-content: center;
 }
 .blog .card .card-body {
   padding: 0 2vh;
