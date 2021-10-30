@@ -20,7 +20,6 @@ export const fetchArticles = () => dispatch => {
         })
         .then(response => response.json())
         .then(articles => dispatch(addArticles(articles)))
-        .then(articles => console.log(JSON.stringify(articles)))
         .catch(error => dispatch(articlesFailed(error.message)));
 };
 
