@@ -170,8 +170,22 @@ p {
   background-image: linear-gradient(to right, #f68e86, #88d5cd);
 }
 
-.blog {
+.blog .header {
   background-image: linear-gradient(to right, #319ea2, #88d5cd, #319ea2);
+}
+.blog .btn-outline-primary {
+  border-color: #319ea2;
+  color: #319ea2;
+}
+.blog .btn-check:checked + .btn-outline-primary {
+  background-color: #319ea2;
+  border-color: #319ea2;
+  color: #fcedc9;
+}
+.blog .btn-check:hover + .btn-outline-primary {
+  background-color: #319ea2;
+  border-color: #319ea2;
+  color: #fcedc9;
 }
 
 .shop {

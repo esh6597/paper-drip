@@ -14,19 +14,35 @@ function TagGroup() {
     
     return (
         <ToggleButtonGroup
-            type="radio"
+            type='radio'
             value={tag}
             onChange={handleChange}
             defaultValue='all'
-            name="tag-toggle"
+            name='tag-toggle'
+            className='blog'
         >
-            <ToggleButton id='tag-all' value={'all'} name="tag-toggle">
+            <ToggleButton 
+                id='tag-all' 
+                value='all' 
+                name="tag-toggle"
+                variant='outline-primary'
+            >
                 All
             </ToggleButton>
-            <ToggleButton id='tag-tutorial' value={'tutorial'} name="tag-toggle">
+            <ToggleButton 
+                id='tag-tutorial' 
+                value='tutorial' 
+                name="tag-toggle"
+                variant='outline-primary'
+            >
                 Tutorials
             </ToggleButton>
-            <ToggleButton id='tag-info' value={'info'} name="tag-toggle">
+            <ToggleButton 
+                id='tag-info' 
+                value='info' 
+                name="tag-toggle"
+                variant='outline-primary'
+            >
                 Informational
             </ToggleButton>
         </ToggleButtonGroup>
@@ -107,8 +123,8 @@ class Blog extends Component {
     render() {
 
         return (
-            <div>
-                <div className="header blog">
+            <div className="blog">
+                <div className="header">
                     <h2>Blog</h2>
                 </div>
                 <div className="container">

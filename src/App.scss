@@ -221,7 +221,26 @@ p {
 }
 
 .blog {
-    background-image: linear-gradient(to right, $color-cool-dark, $color-cool-light, $color-cool-dark);
+    .header {
+        background-image: linear-gradient(to right, $color-cool-dark, $color-cool-light, $color-cool-dark);
+    }
+
+    .btn-outline-primary {
+        border-color: $color-cool-dark;
+        color: $color-cool-dark;
+    }
+
+    .btn-check:checked+.btn-outline-primary {
+        background-color: $color-cool-dark;
+        border-color: $color-cool-dark;
+        color: $color-background;
+    }
+
+    .btn-check:hover+.btn-outline-primary {
+        background-color: $color-cool-dark;
+        border-color: $color-cool-dark;
+        color: $color-background;
+    }
 }
 
 .shop {
