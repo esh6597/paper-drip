@@ -147,7 +147,7 @@ class Shop extends Component {
                             </p>
                         </div>                     
                     </div>
-                    <div className="row">
+                    <div className="row control">
                         <div className="col-12 col-md-6" style={{textAlign: 'center'}}>
                             <ToggleButton
                                 id='under5'

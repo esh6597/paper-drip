@@ -140,7 +140,7 @@ function About(props) {
                                 <Card.Img variant="top" src={baseUrl + 'media/images/circle-blue.png'} />
                                 <Card.Title>Dummy Link</Card.Title>
                                 <Card.Body>
-                                    <Card.Text>Hehe dummy
+                                    <Card.Text>It was funny the first time
                                     </Card.Text>
                                 </Card.Body>
                             </Card>

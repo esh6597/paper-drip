@@ -72,7 +72,7 @@ class UI extends Component {
                     sidebar={
                         <div className='sidebar'>
                             <Link className="nav-link" to="/home">
-                                Home
+                                <p>Home</p>
                             </Link>
                             <Link className="nav-link" to="/about">
                                 About
@@ -90,7 +90,7 @@ class UI extends Component {
                     onSetOpen={this.onSetSidebarOpen}
                     styles={{
                         sidebar: { 
-                            background: variables.colorBackground,
+                            background: variables.colorWarm,
                             padding: 0,
                             transition: "transform .2s ease-in-out",
                             WebkitTransition: "-webkit-transform .2s ease-in-out"

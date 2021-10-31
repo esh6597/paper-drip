@@ -76,17 +76,26 @@
 .sidebar {
   box-sizing: border-box;
   border-top: 32px solid #319ea2;
-  padding-top: 4vh;
-  padding-left: 2vh;
-  padding-right: 6vh;
+  padding-top: 6vh;
 }
 .sidebar .nav-link {
   text-decoration: none;
   font: 400 20px/1.2 "Mukta", sans-serif;
-  color: #dd5964;
+  color: #fcedc9;
+  background-color: #dd5964;
+  padding: 2vh 8vh 2vh 3vh;
+  filter: brightness(100%);
+  transition: filter 0.2s ease-in-out;
 }
 .sidebar .nav-link:hover {
-  color: #f68e86;
+  filter: brightness(90%);
+  transition: filter 0.2s ease-in-out;
+}
+.sidebar .nav-link p {
+  text-decoration: none;
+  font: 700 25px/1.2 "Mukta", sans-serif;
+  color: #fcedc9;
+  margin: 0;
 }
 
 .sidebarButton {
@@ -164,7 +173,7 @@
 }
 
 .blog .header {
-  background-image: linear-gradient(to right, #319ea2, #88d5cd, #319ea2);
+  background-image: linear-gradient(to right, #9e4450, #88d5cd, #319ea2);
 }
 .blog .btn-outline-primary {
   border-color: #319ea2;
@@ -226,7 +235,7 @@
 }
 
 .shop .header {
-  background-image: linear-gradient(to right, #9e4450, #f68e86, #9e4450);
+  background-image: linear-gradient(to right, #319ea2, #f68e86, #9e4450);
 }
 .shop .card {
   margin: 10px;
@@ -290,4 +299,8 @@
 .shop #sort * {
   display: inline;
   width: 50%;
+}
+.shop .control {
+  margin: 3vh 0 3vh 0;
+  line-height: 3;
 }

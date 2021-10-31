@@ -124,17 +124,27 @@ $color-background: #fcedc9;
 .sidebar {
     box-sizing: border-box;
     border-top: 32px solid $color-cool-dark;
-    padding-top: 4vh;
-    padding-left: 2vh;
-    padding-right: 6vh;
+    padding-top: 6vh;
 
     .nav-link {
         text-decoration: none;
         font: $font-text-bold;
-        color: $color-warm;
+        color: $color-background;
+        background-color: $color-warm;
+        padding: 2vh 8vh 2vh 3vh;
+        filter: brightness(100%);
+        transition: filter .2s ease-in-out;
     
         &:hover {
-            color: $color-warm-light;
+            filter: brightness(90%);
+            transition: filter .2s ease-in-out;
+        }
+
+        p {
+            text-decoration: none;
+            font: $font-text-thick;
+            color: $color-background;
+            margin: 0;
         }
     }
 
@@ -226,7 +236,7 @@ $color-background: #fcedc9;
 
 .blog {
     .header {
-        background-image: linear-gradient(to right, $color-cool-dark, $color-cool-light, $color-cool-dark);
+        background-image: linear-gradient(to right, $color-warm-dark, $color-cool-light, $color-cool-dark);
     }
 
     .btn-outline-primary {
@@ -301,7 +311,7 @@ $color-background: #fcedc9;
 
 .shop {
     .header {
-        background-image: linear-gradient(to right, $color-warm-dark, $color-warm-light, $color-warm-dark);
+        background-image: linear-gradient(to right, $color-cool-dark, $color-warm-light, $color-warm-dark);
     }
     .card {
         margin: 10px;
@@ -375,5 +385,10 @@ $color-background: #fcedc9;
     #sort * {
         display: inline;
         width: 50%;
+    }
+
+    .control {
+        margin: 3vh 0 3vh 0;
+        line-height: 3;
     }
 }
