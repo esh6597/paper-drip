@@ -28,82 +28,84 @@ $color-background: #fcedc9;
 // Style
 
 //Theme
-
-h1 {
-    font: $font-title-bold;
-}
-
-h2 {
-    font: $font-title-large;
-    font-style: oblique;
-    margin: 0;
-}
-
-h3 {
-    font: $font-text-thick;
-    margin: 0 0 3vh 0;
-}
-
-p {
-    font: $font-text-light;
-    color: $color-text;
-}
-
-* a {
-    text-decoration: none;
-    font: $font-text-bold;
-    color: $color-warm-dark;
-
-    &:hover {
-        color: $color-warm-light;
+* {
+    h1 {
+        font: $font-title-bold;
     }
-}
-
-* .tag {
-    text-align: center;
-}
-
-.card {
-    margin: 10px;
-    background-color: rgba(0,0,0,0);
-    border: none;
-    opacity: 70%;
-    align-items: center;
-
-    &:hover {
-        opacity: 100%;
-    }
-
-    .card-title {
-        text-align: center;
-        margin-top: 2.5vh;
-        font: $font-text-thick;
-    }
-
-    .card-img-top {
-        border-radius: 50%;
-        width: 50%;
-    }
-
-    .card-text {
-        font: $font-text-small;
-        margin: 0.5vh;
-    }
-}
-
-.header {
-    display: block;
-    position: relative;
-    margin-bottom: 3vh;
-    color: $color-background;
-    min-height: 20vh;
-
+    
     h2 {
-        text-align: center;
-        position: absolute;
-        bottom: 0;
-        left: 25%;
+        font: $font-title-large;
+        font-style: oblique;
+        margin: 0;
     }
+    
+    h3 {
+        font: $font-text-thick;
+        margin: 0 0 3vh 0;
+    }
+    
+    p {
+        font: $font-text-light;
+        color: $color-text;
+    }
+
+    a {
+        text-decoration: none;
+        font: $font-text-bold;
+        color: $color-warm-dark;
+    
+        &:hover {
+            color: $color-warm-light;
+        }
+    }
+
+    .tag {
+        text-align: center;
+    }
+
+    .card {
+        margin: 10px;
+        background-color: rgba(0,0,0,0);
+        border: none;
+        opacity: 70%;
+        align-items: center;
+    
+        &:hover {
+            opacity: 100%;
+        }
+    
+        .card-title {
+            text-align: center;
+            margin-top: 2.5vh;
+            font: $font-text-thick;
+        }
+    
+        .card-img-top {
+            border-radius: 50%;
+            width: 50%;
+        }
+    
+        .card-text {
+            font: $font-text-small;
+            margin: 0.5vh;
+        }
+    }
+    
+    .header {
+        display: block;
+        position: relative;
+        margin-bottom: 3vh;
+        color: $color-background;
+        min-height: 20vh;
+    
+        h2 {
+            text-align: center;
+            position: absolute;
+            bottom: 0;
+            left: 25%;
+        }
+    }
+
 }
 
 //UI
@@ -350,5 +352,14 @@ p {
             text-align: center;
             margin-bottom: 10px;
         }
+    }
+
+    #sort {
+
+        * {
+            display: inline;
+        }
+
+        
     }
 }

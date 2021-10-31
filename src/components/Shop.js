@@ -2,12 +2,12 @@ import React, { Component, useState } from 'react';
 import { baseUrl } from '../shared/baseUrl';
 import { Loading } from './Loading';
 import Card from 'react-bootstrap/Card';
-import ToggleButtonGroup from 'react-bootstrap/ToggleButtonGroup';
 import ToggleButton from 'react-bootstrap/ToggleButton';
+import Form from 'react-bootstrap/Form';
 
-function IsLoading(props) {
+function ShopLoader(props) {
 
-    if (props.isLoading) {
+    if (props.isLoading) {  // Catch errors
         return (
             <Loading />
         );
@@ -20,10 +20,40 @@ function IsLoading(props) {
         );
     }
 
-    let items = props.items;
+    let items = props.items;    //THE GREAT FILTER
 
     if (props.under5) {
         items = items.filter(item => item.tags.includes('under 5'));
+    }
+
+    items = items.sort((itemA, itemB) => compare(itemA, itemB, props.sort));
+
+    function compare(itemA, itemB, sortType) {
+        if (sortType === 'date-oldest') {
+            if (itemB.id >= itemA.id) {
+                return -1;
+            } else {
+                return 1;
+            }
+        } else if (sortType === 'date-newest') {
+            if (itemB.id >= itemA.id) {
+                return 1;
+            } else {
+                return -1;
+            }
+        } else if (sortType === 'price-highest') {
+            if (itemB.price >= itemA.price) {
+                return 1;
+            } else {
+                return -1;
+            }
+        } else if (sortType === 'price-lowest') {
+            if (itemB.price >= itemA.price) {
+                return -1;
+            } else {
+                return 1;
+            }
+        }
     }
     
     items = items.map(item => {
@@ -58,7 +88,8 @@ class Shop extends Component {
         super(props);
 
         this.state = {
-            under5: false
+            under5: false,
+            sort: 'date-oldest'
         };
 
         this.filterUnder5 = this.filterUnder5.bind(this);
@@ -68,8 +99,11 @@ class Shop extends Component {
         this.setState({under5: !this.state.under5});
     }
 
+    changeSort = event => {
+        this.setState({sort: event.target.value});
+    };
+
     render() {
-        console.log(this.props.toString());
         return (
             <div className="shop">
                 <div className="header">
@@ -102,16 +136,29 @@ class Shop extends Component {
                                 Under $5
                             </ToggleButton>
                         </div>
-                        <div className="col-12 col-md-6" style={{textAlign: 'center'}}>
-                            <p>Sort by: </p>
+                        <div className="col-12 col-md-6" style={{textAlign: 'center'}} id='sort'>
+                            <p>Filter by: </p>
+                            <Form>
+                                <Form.Control
+                                    aria-label='Shop Sort'
+                                    as='select'
+                                    onChange={this.changeSort}
+                                >
+                                    <option value='date-oldest'>Date (oldest first)</option>
+                                    <option value='date-newest'>Date (newest first)</option>
+                                    <option value='price-highest'>Price (highest first)</option>
+                                    <option value='price-lowest'>Price (lowest first)</option>
+                                </Form.Control>
+                            </Form>
                         </div>
                     </div>
                     <div className="row">
-                        <IsLoading 
+                        <ShopLoader 
                             isLoading={this.props.items.isLoading}
                             errMess={this.props.items.errMess}
                             items={this.props.items.items}
                             under5={this.state.under5}
+                            sort={this.state.sort}
                         />
                     </div>
                 </div>

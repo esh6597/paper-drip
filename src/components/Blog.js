@@ -5,7 +5,7 @@ import Card from 'react-bootstrap/Card';
 import ToggleButtonGroup from 'react-bootstrap/ToggleButtonGroup';
 import ToggleButton from 'react-bootstrap/ToggleButton';
 
-function IsLoading(props) {
+function BlogLoader(props) {
     if (props.isLoading) {
         return (
             <Loading />
@@ -132,7 +132,7 @@ function Blog(props) {
                     </div>                        
                 </div>
                 <div className="row">
-                    <IsLoading 
+                    <BlogLoader 
                         isLoading={props.articles.isLoading}
                         errMess={props.articles.errMess}
                         articles={props.articles.articles}
