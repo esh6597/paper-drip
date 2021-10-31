@@ -87,12 +87,12 @@ p {
   padding-left: 2vh;
   padding-right: 6vh;
 }
-.sidebar a {
+.sidebar .nav-link {
   text-decoration: none;
   font: 400 20px/1.2 "Mukta", sans-serif;
-  color: #9e4450;
+  color: #dd5964;
 }
-.sidebar a:hover {
+.sidebar .nav-link:hover {
   color: #f68e86;
 }
 

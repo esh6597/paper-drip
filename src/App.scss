@@ -126,10 +126,10 @@ p {
     padding-left: 2vh;
     padding-right: 6vh;
 
-    a {
+    .nav-link {
         text-decoration: none;
         font: $font-text-bold;
-        color: $color-warm-dark;
+        color: $color-warm;
     
         &:hover {
             color: $color-warm-light;

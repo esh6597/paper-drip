@@ -19,9 +19,7 @@ function IsLoading(props) {
         </div>
         );
     }
-
-    console.log(JSON.stringify(props.items));
-
+    
     const items = props.items.map(item => {
         return (
             <div key={item.id} className="col-12 col-md-6 col-lg-4">
@@ -42,6 +40,8 @@ function IsLoading(props) {
         );
     });
 
+    
+
     return (
         <React.Fragment>
             {items}
@@ -52,6 +52,16 @@ function IsLoading(props) {
 class Shop extends Component {
     constructor(props) {
         super(props);
+
+        this.state = {
+            under5: false
+        };
+
+        this.filterUnder5 = this.filterUnder5.bind(this);
+    }
+
+    filterUnder5() {
+        this.setState({under5: !this.state.under5});
     }
 
     render() {
@@ -69,7 +79,7 @@ class Shop extends Component {
                                 or the search bar above to browse through the whole website!
                             </p>
                             <p>
-                                Tags being filtered:
+                                Tags being filtered: {this.state.under5 ? 'Under $5' : ''}
                             </p>
                         </div>                     
                     </div>
@@ -79,6 +89,8 @@ class Shop extends Component {
                                 id='under5'
                                 type='checkbox'
                                 variant='outline-primary'
+                                checked={this.state.under5}
+                                onClick={this.filterUnder5}
                             >
                                 Under $5
                             </ToggleButton>
@@ -92,6 +104,7 @@ class Shop extends Component {
                             isLoading={this.props.items.isLoading}
                             errMess={this.props.items.errMess}
                             items={this.props.items.items}
+                            under5={this.state.under5}
                         />
                     </div>
                 </div>

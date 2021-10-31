@@ -44,7 +44,7 @@ function About(props) {
                         <h3>About Me</h3>
                         <p style={{fontStyle: 'italic'}}>
                             "A jack of all trades is a master of none, but oftentimes better than a master of one."<br />
-                            --Someone, probably
+                            --Someone important probably, but I can't find who
                         </p>
                         <p>
                             I'm an eclectic clown from Rockville, MD currently living in Tucson, AZ. I love learning but also often 
@@ -104,8 +104,7 @@ function About(props) {
                                 <Card.Title>Portfolio</Card.Title>
                                 <Card.Body>
                                     <Card.Text>Hiring, or just curious? Check out my non-origami creations 
-                                        here: paintings, digital art, web development, and more. Note: 
-                                        website currently doesn't exist.
+                                        here. Note: website currently doesn't exist.
                                     </Card.Text>
                                 </Card.Body>
                             </Card>
