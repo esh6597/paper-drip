@@ -25,10 +25,12 @@ function Welcome() {
 
 function NewsLetter() {
     return (
-        <div className="newsletter col-12 col-lg-5">
-            <h3>Latest News</h3>
-            <p>Local programmer manages to somehow overcome the odds and complete his portfolio project on time.</p>
-            <p>Live feed coming soon; stay tuned!</p>
+        <div className="col-12 col-lg-5 newsletter">
+            <div>
+                <h3>Latest News</h3>
+                <p>Local programmer manages to somehow overcome the odds and complete his portfolio project on time.</p>
+                <p>Live feed coming soon; stay tuned!</p>
+            </div>
         </div>
     );
 }
