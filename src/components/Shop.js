@@ -30,6 +30,10 @@ function ShopLoader(props) {
         items = items.filter(item => item.tags.includes('bad'));
     }
 
+    if (props.cool) {
+        items = items.filter(item => item.tags.includes('cool'));
+    }
+
     items = items.sort((itemA, itemB) => compare(itemA, itemB, props.sort));
 
     function compare(itemA, itemB, sortType) {
@@ -94,11 +98,13 @@ class Shop extends Component {
         this.state = {
             under5: false,
             bad: false,
+            cool: false,
             sort: 'date-oldest'
         };
 
         this.filterUnder5 = this.filterUnder5.bind(this);
         this.filterBad = this.filterBad.bind(this);
+        this.filterCool = this.filterCool.bind(this);
     }
 
     filterUnder5() {
@@ -107,6 +113,10 @@ class Shop extends Component {
 
     filterBad() {
         this.setState({bad: !this.state.bad});
+    }
+
+    filterCool() {
+        this.setState({cool: !this.state.cool});
     }
 
     changeSort = event => {
@@ -130,7 +140,10 @@ class Shop extends Component {
                                 WARNING: Do not buy anything from me.
                             </p>
                             <p>
-                                Searching for tags:{'   '}{this.state.under5 ? '# $5 or Less    ' : ''}{this.state.bad ? '# Really Bad' : ''}
+                                Searching for tags:{' '}
+                                {this.state.under5 ? '# $5 or Less ' : ''}
+                                {this.state.bad ? '# Really Bad ' : ''}
+                                {this.state.cool ? '# Wow, cool!' : ''}
                             </p>
                         </div>                     
                     </div>
@@ -153,6 +166,15 @@ class Shop extends Component {
                                 onClick={this.filterBad}
                             >
                                 Really Bad
+                            </ToggleButton>{' '}
+                            <ToggleButton
+                                id='cool'
+                                type='checkbox'
+                                variant='outline-primary'
+                                checked={this.state.cool}
+                                onClick={this.filterCool}
+                            >
+                                Cool! :)
                             </ToggleButton>
                         </div>
                         <div className="col-12 col-md-6" style={{textAlign: 'center'}} id='sort'>
@@ -178,6 +200,7 @@ class Shop extends Component {
                             items={this.props.items.items}
                             under5={this.state.under5}
                             bad={this.state.bad}
+                            cool={this.state.cool}
                             sort={this.state.sort}
                         />
                     </div>
