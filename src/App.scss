@@ -354,12 +354,26 @@ $color-background: #fcedc9;
         }
     }
 
-    #sort {
+    .btn-outline-primary {
+        border-color: $color-warm-dark;
+        color: $color-warm-dark;
+        margin: 0;
+    }
 
-        * {
-            display: inline;
-        }
+    .btn-check:checked+.btn-outline-primary {
+        background-color: $color-warm-dark;
+        border-color: $color-warm-dark;
+        color: $color-background;
+    }
 
-        
+    .btn-check:hover+.btn-outline-primary {
+        background-color: $color-warm-dark;
+        border-color: $color-warm-dark;
+        color: $color-background;
+    }
+
+    #sort * {
+        display: inline;
+        width: 50%;
     }
 }

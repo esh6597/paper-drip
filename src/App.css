@@ -272,6 +272,22 @@
   text-align: center;
   margin-bottom: 10px;
 }
+.shop .btn-outline-primary {
+  border-color: #9e4450;
+  color: #9e4450;
+  margin: 0;
+}
+.shop .btn-check:checked + .btn-outline-primary {
+  background-color: #9e4450;
+  border-color: #9e4450;
+  color: #fcedc9;
+}
+.shop .btn-check:hover + .btn-outline-primary {
+  background-color: #9e4450;
+  border-color: #9e4450;
+  color: #fcedc9;
+}
 .shop #sort * {
   display: inline;
+  width: 50%;
 }
