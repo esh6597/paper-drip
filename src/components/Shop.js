@@ -19,8 +19,14 @@ function IsLoading(props) {
         </div>
         );
     }
+
+    let items = props.items;
+
+    if (props.under5) {
+        items = items.filter(item => item.tags.includes('under 5'));
+    }
     
-    const items = props.items.map(item => {
+    items = items.map(item => {
         return (
             <div key={item.id} className="col-12 col-md-6 col-lg-4">
                 <Card>
@@ -39,8 +45,6 @@ function IsLoading(props) {
             </div>
         );
     });
-
-    
 
     return (
         <React.Fragment>
@@ -77,6 +81,9 @@ class Shop extends Component {
                             <p>
                                 Looking for a specific item? Feel free to use the filter tags below, 
                                 or the search bar above to browse through the whole website!
+                            </p>
+                            <p>
+                                WARNING: Do not buy anything from me.
                             </p>
                             <p>
                                 Tags being filtered: {this.state.under5 ? 'Under $5' : ''}
