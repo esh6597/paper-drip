@@ -23,7 +23,11 @@ function ShopLoader(props) {
     let items = props.items;    //THE GREAT FILTER
 
     if (props.under5) {
-        items = items.filter(item => item.tags.includes('under 5'));
+        items = items.filter(item => item.price <= 5);
+    }
+    
+    if (props.bad) {
+        items = items.filter(item => item.tags.includes('bad'));
     }
 
     items = items.sort((itemA, itemB) => compare(itemA, itemB, props.sort));
@@ -78,7 +82,7 @@ function ShopLoader(props) {
 
     return (
         <React.Fragment>
-            {items}
+            {items.length > 0 ? items : 'Sorry, no results were found!'}
         </React.Fragment>
     );
 }
@@ -89,14 +93,20 @@ class Shop extends Component {
 
         this.state = {
             under5: false,
+            bad: false,
             sort: 'date-oldest'
         };
 
         this.filterUnder5 = this.filterUnder5.bind(this);
+        this.filterBad = this.filterBad.bind(this);
     }
 
     filterUnder5() {
         this.setState({under5: !this.state.under5});
+    }
+
+    filterBad() {
+        this.setState({bad: !this.state.bad});
     }
 
     changeSort = event => {
@@ -120,7 +130,7 @@ class Shop extends Component {
                                 WARNING: Do not buy anything from me.
                             </p>
                             <p>
-                                Tags being filtered: {this.state.under5 ? 'Under $5' : ''}
+                                Searching for tags:{'   '}{this.state.under5 ? '# $5 or Less    ' : ''}{this.state.bad ? '# Really Bad' : ''}
                             </p>
                         </div>                     
                     </div>
@@ -133,11 +143,20 @@ class Shop extends Component {
                                 checked={this.state.under5}
                                 onClick={this.filterUnder5}
                             >
-                                Under $5
+                                $5 or Less
+                            </ToggleButton>{' '}
+                            <ToggleButton
+                                id='bad'
+                                type='checkbox'
+                                variant='outline-primary'
+                                checked={this.state.bad}
+                                onClick={this.filterBad}
+                            >
+                                Really Bad
                             </ToggleButton>
                         </div>
                         <div className="col-12 col-md-6" style={{textAlign: 'center'}} id='sort'>
-                            <p>Filter by: </p>
+                            <p>Sort by: </p>
                             <Form>
                                 <Form.Control
                                     aria-label='Shop Sort'
@@ -158,6 +177,7 @@ class Shop extends Component {
                             errMess={this.props.items.errMess}
                             items={this.props.items.items}
                             under5={this.state.under5}
+                            bad={this.state.bad}
                             sort={this.state.sort}
                         />
                     </div>
