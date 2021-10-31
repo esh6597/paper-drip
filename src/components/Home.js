@@ -2,6 +2,7 @@ import React from 'react';
 import { baseUrl } from '../shared/baseUrl';
 import { Link } from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
+import { Loading } from './Loading';
 
 function Splash() {
     return (
@@ -35,23 +36,58 @@ function NewsLetter() {
     );
 }
 
-function Featured() {
-    return (
-        <div className="row featured">
-            <h3>Featured</h3>
-            <p style={{textAlign: 'center', marginBottom: 50}}>Sorry, nothing works here yet. Dynamically generated features coming soon!</p>
+function Featured(props) {
+    if (props.articles.isLoading || props.items.isLoading) {
+        return (
+            <Loading />
+        );
+    }
+    if (props.errMess) {
+        return (
+        <div className="col">
+            <p>{props.errMess}</p>
         </div>
+        );
+    }
+
+    const featuredItems = props.items.items.filter(item => item.featured);
+    const featuredArticles = props.articles.articles.filter(article => article.featured);
+    const featured = featuredItems.concat(featuredArticles);
+    
+    const featuredDisplay = featured.map(cardItem => {
+        return (
+            <div className="col-12 col-sm-6 col-md-4">
+                <Card>
+                    <Card.Img
+                        variant="top"
+                        src={baseUrl + cardItem.image}
+                    />
+                    <Card.Body>
+                        <Card.Title>{cardItem.name}</Card.Title>
+                        <Card.Text>{cardItem.summary.length > 150 ? 
+                            cardItem.summary.slice(0,150).trim() + '...'
+                            : cardItem.summary
+                        }</Card.Text>
+                    </Card.Body>
+                </Card>
+            </div>
+        );
+    });
+
+    return (
+        <React.Fragment>
+            <div className="row featured d-flex justify-content-center">
+                {featuredDisplay}
+            </div>
+        </React.Fragment>
     );
 }
 
 function Sections() {
     return (
         <div className="sections">
-            <div className="row no-gutter">
-                <h3>Sections</h3>
-            </div>
-            <div className="row">
-                <div className="col-12 col-md-4">
+            <div className="row d-flex justify-content-center">
+                <div className="col-12 col-sm-6 col-md-4 mx-0">
                     <Link to="/about">
                         <Card>
                             <Card.Img variant="top" src={baseUrl + 'media/images/about.png'} />
@@ -62,7 +98,7 @@ function Sections() {
                         </Card>
                     </Link>
                 </div>
-                <div className="col-12 col-md-4">
+                <div className="col-12 col-sm-6 col-md-4">
                     <Link to="/blog">
                         <Card>
                             <Card.Img variant="top" src={baseUrl + 'media/images/blog.png'} />
@@ -75,7 +111,7 @@ function Sections() {
                         </Card>
                     </Link>
                 </div>
-                <div className="col-12 col-md-4">
+                <div className="col-12 col-sm-6 col-md-4">
                     <Link to="/shop">
                         <Card>
                             <Card.Img variant="top" src={baseUrl + 'media/images/shop.png'} />
@@ -102,7 +138,16 @@ function Home(props) {
                     <Welcome />
                     <NewsLetter />
                 </div>
-                <Featured />
+                <div className="row featured">
+                    <h3>Featured</h3>
+                </div>
+                <Featured
+                    articles={props.articles}
+                    items={props.items}
+                />
+                <div className="row no-gutter sections">
+                    <h3>Sections</h3>
+                </div>
                 <Sections />
             </div>
         </div>

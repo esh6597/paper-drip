@@ -1,3 +1,7 @@
+export const ADD_FEATURED = "ADD_FEATURED";
+export const FEATURED_LOADING = "FEATURED_LOADING";
+export const FEATURED_FAILED = "FEATURED_FAILED";
+
 export const ADD_ARTICLES = "ADD_ARTICLES";
 export const ARTICLES_LOADING = "ARTICLES_LOADING";
 export const ARTICLES_FAILED = "ARTICLES_FAILED";
@@ -16,5 +20,6 @@ export const REVIEWS_LOADING = "REVIEWS_LOADING";
 export const REVIEWS_FAILED = "REVIEWS_FAILED";
 export const NEW_REVIEW = "NEW_REVIEW";
 
-export const LOG_IN = "LOG_IN";
-export const NEW_USER = "NEW_USER";
+//Sorry, this feature isn't available yet. Coming soon!
+//export const LOG_IN = "LOG_IN"; 
+//export const NEW_USER = "NEW_USER";

@@ -60,8 +60,12 @@ class UI extends Component {
 
     render() {
         const HomePage = () => {
+
             return (
-                <Home />
+                <Home 
+                    articles={this.props.articles}
+                    items={this.props.items}
+                />
             );
         }
 

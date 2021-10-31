@@ -26,7 +26,7 @@ function BlogLoader(props) {
                     <Card>
                         <Card.Img variant="top" src={baseUrl + article.image} />
                         <Card.Body>
-                            <Card.Title>{article.title}</Card.Title>
+                            <Card.Title>{article.name}</Card.Title>
                             <Card.Text>{article.summary.length > 150 ? 
                                 article.summary.slice(0,150).trim() + '...'
                                 : article.summary
@@ -53,7 +53,7 @@ function BlogLoader(props) {
                     <Card>
                         <Card.Img variant="top" src={baseUrl + article.image} />
                         <Card.Body>
-                            <Card.Title>{article.title}</Card.Title>
+                            <Card.Title>{article.name}</Card.Title>
                             <Card.Text>{article.summary.length > 150 ? 
                                 article.summary.slice(0,150).trim() + '...'
                                 : article.summary

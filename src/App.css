@@ -17,32 +17,37 @@
 * a {
   text-decoration: none;
   font: 400 20px/1.2 "Mukta", sans-serif;
-  color: #9e4450;
+  color: #dd5964;
+  transition: color 0.2s ease-in-out;
 }
 * a:hover {
   color: #f68e86;
+  transition: color 0.2s ease-in-out;
 }
 * .tag {
   text-align: center;
 }
 * .card {
-  margin: 10px;
+  margin: 0px;
   background-color: rgba(0, 0, 0, 0);
   border: none;
   opacity: 70%;
   align-items: center;
+  transition: opacity 0.2s ease-in-out;
+  padding: 0;
 }
 * .card:hover {
   opacity: 100%;
+  transition: opacity 0.2s ease-in-out;
 }
 * .card .card-title {
   text-align: center;
-  margin-top: 2.5vh;
+  margin-top: 3vh;
   font: 700 25px/1.2 "Mukta", sans-serif;
 }
 * .card .card-img-top {
   border-radius: 50%;
-  width: 50%;
+  width: 70%;
 }
 * .card .card-text {
   font: 300 16px/1.2 "Mukta", sans-serif;
@@ -159,6 +164,49 @@
 }
 .featured h3 {
   text-align: center;
+}
+.featured .card {
+  margin: 10px;
+  background-color: rgba(0, 0, 0, 0);
+  border: 1px solid #319ea2;
+  opacity: 70%;
+  align-items: center;
+  height: 95%;
+  width: 100%;
+}
+.featured .card:hover {
+  opacity: 100%;
+}
+.featured .card .card-title {
+  text-align: center;
+  margin-top: 2.5vh;
+  font: 400 20px/1.2 "Mukta", sans-serif;
+  color: #40373a;
+}
+.featured .card .card-img-top {
+  border-radius: 0%;
+  width: 100%;
+  height: 50%;
+  object-fit: cover;
+}
+.featured .card .card-text {
+  font: 300 16px/1.2 "Mukta", sans-serif;
+  object-fit: cover;
+  height: 60%;
+  align-content: center;
+}
+.featured .card .card-body {
+  padding: 0 2vh;
+}
+.featured .card .bottom {
+  color: #319ea2;
+  font: 300 16px/1.2 "Mukta", sans-serif;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  margin-bottom: 10px;
 }
 
 .sections {
