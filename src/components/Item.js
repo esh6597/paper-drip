@@ -88,7 +88,10 @@ function Item(props) {
                     </form>
                 </div>
                 <div className="col-12 col-md-6">
-                    <p>{props.mainItem.description}</p>
+                    <h3>Description</h3>
+                    <p>{props.mainItem.description 
+                        ? props.mainItem.description 
+                        : 'Sorry, nothing here yet!'}</p>
                 </div>
             </React.Fragment>
         );
