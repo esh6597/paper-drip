@@ -1,8 +1,9 @@
 import React, { Component, useState } from 'react';
 import { baseUrl } from '../shared/baseUrl';
 import { Loading } from './Loading';
-import { BsFillPlusCircleFill, BsFillDashCircleFill } from 'react-icons/bs';
-import { Control, Form, Errors } from 'react-redux-form';
+import { BsFillPlusCircleFill, BsFillDashCircleFill,
+    BsFillHandThumbsUpFill, BsFillHandThumbsDownFill } from 'react-icons/bs';
+import Button from 'react-bootstrap/Button';
 
 function Item(props) {
 
@@ -33,6 +34,11 @@ function Item(props) {
                     <BsFillDashCircleFill />
                     <input type="text" />
                     <BsFillPlusCircleFill />
+                    <Button
+                        variant="primary"
+                    >
+                        Add to Cart
+                    </Button>
                 </div>
                 <div className="col-12 col-md-6">
                     <p>{props.mainItem.description}</p>
@@ -83,6 +89,10 @@ function Item(props) {
                             </p>
                             <p>
                                 by {review.author}{' '}{parseDate(review.date)}
+                            </p>
+                            <p>
+                                {review.likes}{' '}<BsFillHandThumbsUpFill />{' '}
+                                {review.dislikes}{' '}<BsFillHandThumbsDownFill />
                             </p>
                         </div>
                     );
