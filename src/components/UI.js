@@ -14,6 +14,7 @@ import Home from './Home';
 import About from './About';
 import Blog from './Blog';
 import Shop from './Shop';
+import Item from './Item';
 
 import { fetchArticles, fetchItems } from '../redux/ActionCreators';
 
@@ -70,8 +71,13 @@ class UI extends Component {
             );
         };
 
-        const ItemPage = ({match}) => {
-
+        const ItemWithId = ({match}) => {
+            return(
+                <Item 
+                    mainItem={this.props.items.items.filter(item => item.id === +match.params.itemId)[0]}
+                    items={this.props.items}
+                />
+            );
         };
 
         return (
@@ -115,6 +121,7 @@ class UI extends Component {
                             <Route exact path='/about' render={() => <About />} />
                             <Route exact path='/blog' render={() => <Blog articles={this.props.articles} />} />
                             <Route exact path='/shop' render={() => <Shop items={this.props.items} />} />
+                            <Route path='/shop/:itemId' component={ItemWithId} />
                             <Redirect to='/home' />
                         </Switch>
                         <Footer />
