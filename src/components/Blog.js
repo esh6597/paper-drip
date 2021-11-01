@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { baseUrl } from '../shared/baseUrl';
+import { Link } from 'react-router-dom';
+
 import { Loading } from './Loading';
 import Card from 'react-bootstrap/Card';
 import ToggleButtonGroup from 'react-bootstrap/ToggleButtonGroup';
@@ -23,19 +25,21 @@ function BlogLoader(props) {
         const articles = props.articles.map(article => {
             return (
                 <div key={article.id} className="col-12 col-md-6 col-lg-4">
-                    <Card>
-                        <Card.Img variant="top" src={baseUrl + article.image} />
-                        <Card.Body>
-                            <Card.Title>{article.name}</Card.Title>
-                            <Card.Text>{article.summary.length > 150 ? 
-                                article.summary.slice(0,150).trim() + '...'
-                                : article.summary
-                            }</Card.Text>
-                        </Card.Body>
-                        <Card.Body>
-                            <p className="bottom">{article.tag.toUpperCase()}</p>
-                        </Card.Body>
-                    </Card>
+                    <Link to={`blog/${article.id}`}>
+                        <Card>
+                            <Card.Img variant="top" src={baseUrl + article.image} />
+                            <Card.Body>
+                                <Card.Title>{article.name}</Card.Title>
+                                <Card.Text>{article.summary.length > 150 ? 
+                                    article.summary.slice(0,150).trim() + '...'
+                                    : article.summary
+                                }</Card.Text>
+                            </Card.Body>
+                            <Card.Body>
+                                <p className="bottom">{article.tag.toUpperCase()}</p>
+                            </Card.Body>
+                        </Card>
+                    </Link>
                 </div>
             );
         });

@@ -1,9 +1,19 @@
 import React, { Component, useState } from 'react';
 import { baseUrl } from '../shared/baseUrl';
+import { connect } from 'react-redux';
+
 import { Loading } from './Loading';
 import { BsFillPlusCircleFill, BsFillDashCircleFill,
     BsFillHandThumbsUpFill, BsFillHandThumbsDownFill } from 'react-icons/bs';
 import Button from 'react-bootstrap/Button';
+
+import { updateCart, removeCartItem, emptyCart } from '../redux/ActionCreators';
+
+const mapDispatchToProps = {
+    updateCart: (itemId, quantity) => (updateCart(itemId, quantity)),
+    removeCartItem: (itemId) => (removeCartItem(itemId)),
+    emptyCart: () => (emptyCart())
+}
 
 function Item(props) {
 
@@ -116,4 +126,4 @@ function Item(props) {
     );
 }
 
-export default Item;
+export default connect(null, mapDispatchToProps)(Item);

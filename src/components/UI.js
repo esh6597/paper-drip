@@ -102,7 +102,10 @@ class UI extends Component {
 
         return (
             <div>
-                <Toolbar />
+                <Toolbar 
+                    items={this.props.items.items}
+                    cart={this.props.cart}
+                />
                 <Sidebar
                     sidebar={
                         <div className='sidebar'>

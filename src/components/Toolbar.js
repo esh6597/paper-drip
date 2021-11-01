@@ -1,9 +1,17 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import { baseUrl } from '../shared/baseUrl';
+import { connect } from 'react-redux';
 
 import { BsSearch, BsPersonFill, BsCartFill } from "react-icons/bs";
 import variables from '../variables.module.scss';
+import { updateCart, removeCartItem, emptyCart } from '../redux/ActionCreators';
+
+const mapDispatchToProps = {
+    updateCart: (itemId, quantity) => (updateCart(itemId, quantity)),
+    removeCartItem: (itemId) => (removeCartItem(itemId)),
+    emptyCart: () => (emptyCart())
+}
 
 class Toolbar extends Component {
 
@@ -34,4 +42,4 @@ class Toolbar extends Component {
     }
 }
 
-export default Toolbar;
+export default connect(null, mapDispatchToProps)(Toolbar);

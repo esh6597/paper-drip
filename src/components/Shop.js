@@ -4,6 +4,7 @@ import { Loading } from './Loading';
 import Card from 'react-bootstrap/Card';
 import ToggleButton from 'react-bootstrap/ToggleButton';
 import Form from 'react-bootstrap/Form';
+import { Link } from 'react-router-dom'
 
 function ShopLoader(props) {
 
@@ -67,19 +68,21 @@ function ShopLoader(props) {
     items = items.map(item => {
         return (
             <div key={item.id} className="col-12 col-md-6 col-lg-4">
-                <Card>
-                    <Card.Img variant="top" src={baseUrl + item.image} />
-                    <Card.Body>
-                        <Card.Title>{item.name}</Card.Title>
-                        <Card.Text>{item.summary.length > 150 ? 
-                            item.summary.slice(0,150).trim() + '...'
-                            : item.summary
-                        }</Card.Text>
-                    </Card.Body>
-                    <Card.Body>
-                        <p className="bottom">$ {item.price.toFixed(2)}</p>
-                    </Card.Body>
-                </Card>
+                <Link to={`shop/${item.id}`}>
+                    <Card>                    
+                        <Card.Img variant="top" src={baseUrl + item.image} />
+                        <Card.Body>
+                            <Card.Title>{item.name}</Card.Title>
+                            <Card.Text>{item.summary.length > 150 ? 
+                                item.summary.slice(0,150).trim() + '...'
+                                : item.summary
+                            }</Card.Text>
+                        </Card.Body>
+                        <Card.Body>
+                            <p className="bottom">$ {item.price.toFixed(2)}</p>
+                        </Card.Body>
+                    </Card>
+                </Link>
             </div>
         );
     });
