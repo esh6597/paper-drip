@@ -8,6 +8,7 @@ import { Articles } from './articles';
 import { Items } from './items';
 import { Comments } from './comments';
 import { Reviews } from './reviews';
+import { Cart } from './cart';
 
 export const ConfigureStore = () => {
     const store = createStore(
@@ -15,7 +16,8 @@ export const ConfigureStore = () => {
             articles: Articles,
             items: Items,
             comments: Comments,
-            reviews: Reviews
+            reviews: Reviews,
+            cart: Cart
         }),
         applyMiddleware(thunk, logger)
     );

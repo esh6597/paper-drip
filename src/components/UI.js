@@ -29,6 +29,7 @@ const mapStateToProps = state => {
         items: state.items,
         comments: state.comments,
         reviews: state.reviews,
+        cart: state.cart
     };
 };
 

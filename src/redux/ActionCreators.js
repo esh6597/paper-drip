@@ -152,3 +152,19 @@ export const addComments = comments => ({
     type: ActionTypes.ADD_COMMENTS,
     payload: comments
 });
+
+//Cart
+
+export const updateCart = cartItem => ({
+    type: ActionTypes.UPDATE_CART,
+    payload: cartItem
+});
+
+export const removeCartItem = cartItem => ({
+    type: ActionTypes.REMOVE_CART_ITEM,
+    payload: cartItem
+});
+
+export const emptyCart = () => ({
+    type: ActionTypes.EMPTY_CART
+});

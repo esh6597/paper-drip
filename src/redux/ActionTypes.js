@@ -18,6 +18,10 @@ export const COMMENTS_FAILED = "COMMENTS_FAILED";
 //Future feature: posting comments
 //export const UPDATE_COMMENTS = "UPDATE_COMMENTS"
 
+export const UPDATE_CART = "UPDATE_CART";
+export const REMOVE_CART_ITEM = "REMOVE_CART_ITEM";
+export const EMPTY_CART = "EMPTY_CART";
+
 //Sorry, this feature isn't available yet. Coming soon!
 //export const LOG_IN = "LOG_IN"; 
 //export const NEW_USER = "NEW_USER";

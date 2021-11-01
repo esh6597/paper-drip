@@ -13,6 +13,7 @@ class Toolbar extends Component {
         this.state = {
             isCartOpen: false,
             isSearchOpen: false,
+            searchQuery: '',
             isModalOpen: false,
             isLoggedIn: false,
             cart: []
