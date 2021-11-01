@@ -1,7 +1,8 @@
 import * as ActionTypes from './ActionTypes';
 
 export const Cart = ( state = {
-    cart: []
+    cart: [],
+    message: ''
 }, action) => {
 
     if (action.type === ActionTypes.UPDATE_CART) {
@@ -19,7 +20,7 @@ export const Cart = ( state = {
                 id: action.itemId,
                 quantity: action.quantity
             };
-            return {...state, cart: this.state.cart.concat(newCartItem)}
+            return {...state, cart: state.cart.concat(newCartItem)}
         }
 
     } else if (action.type === ActionTypes.REMOVE_CART_ITEM) {

@@ -5,13 +5,7 @@ import { connect } from 'react-redux';
 
 import { BsSearch, BsPersonFill, BsCartFill } from "react-icons/bs";
 import variables from '../variables.module.scss';
-import { updateCart, removeCartItem, emptyCart } from '../redux/ActionCreators';
-
-const mapDispatchToProps = {
-    updateCart: (itemId, quantity) => (updateCart(itemId, quantity)),
-    removeCartItem: (itemId) => (removeCartItem(itemId)),
-    emptyCart: () => (emptyCart())
-}
+import Collapse from 'react-bootstrap/Collapse';
 
 class Toolbar extends Component {
 
@@ -20,26 +14,43 @@ class Toolbar extends Component {
         
         this.state = {
             isCartOpen: false,
-            isSearchOpen: false,
-            searchQuery: '',
-            isModalOpen: false,
-            isLoggedIn: false,
-            cart: []
+            isModalOpen: false
         };
+
+        this.toggleCart = this.toggleCart.bind(this);
+    }
+
+    toggleCart() {
+        this.setState({isCartOpen: !this.state.isCartOpen});
     }
 
     render() {
+        const cartDisplay = this.props.cart.cart.map(cartItem => {
+            const referencedItem = this.props.items.find(reference => reference.id === cartItem.id)
+            return (
+                <div className="col-12" key={referencedItem.id}>
+                    {referencedItem.name}{' | '}Quantity:{' '}{cartItem.quantity}
+                </div>
+            );
+        });
+
+
         return (
             <div className='toolbar'>
                 <div></div>
                 <div>
-                    <BsSearch />
-                    <BsPersonFill />
-                    <BsCartFill />
+                    <BsCartFill 
+                        onClick={this.toggleCart}
+                    />
+                    <Collapse in={this.state.isCartOpen}>
+                        <div class="cart-body">
+                            {cartDisplay}
+                        </div>
+                    </Collapse>
                 </div>
             </div>
         );
     }
 }
 
-export default connect(null, mapDispatchToProps)(Toolbar);
+export default Toolbar;

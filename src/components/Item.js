@@ -6,12 +6,6 @@ import { Loading } from './Loading';
 import { BsFillPlusCircleFill, BsFillDashCircleFill,
     BsFillHandThumbsUpFill, BsFillHandThumbsDownFill } from 'react-icons/bs';
 
-import { updateCart } from '../redux/ActionCreators';
-
-const mapDispatchToProps = {
-    updateCart: (itemId, quantity) => (updateCart(itemId, quantity))
-};
-
 function Item(props) {
 
     const [tempQuantity, setQuantity] = useState(1);
@@ -33,13 +27,14 @@ function Item(props) {
     }                                  //so you can't add more than available
 
     const handleSubmit = (event) => {
+        event.preventDefault();
         if (tempQuantity < 1) {
             console.log('Sorry, you added nothing.');
         } else {
             props.updateCart(props.mainItem.id, tempQuantity);
+            console.log(`Added ${tempQuantity} ${props.mainItem.name}`);
             setQuantity(1);
         }
-        event.preventDefault();
     }
 
     const itemLoader = () => {
@@ -161,4 +156,4 @@ function Item(props) {
     );
 }
 
-export default connect(null, mapDispatchToProps)(Item);
+export default Item;

@@ -18,7 +18,8 @@ import Item from './Item';
 import Article from './Article';
 
 import { fetchArticles, fetchItems, 
-    fetchReviews, fetchComments } from '../redux/ActionCreators';
+    fetchReviews, fetchComments,
+    updateCart, removeCartItem, emptyCart } from '../redux/ActionCreators';
 
 import { BsList } from 'react-icons/bs';
 import Button from '@restart/ui/esm/Button';
@@ -37,7 +38,10 @@ const mapDispatchToProps = {
     fetchArticles: () => (fetchArticles()),
     fetchItems: () => (fetchItems()),
     fetchReviews: () => (fetchReviews()),
-    fetchComments: () => (fetchComments())
+    fetchComments: () => (fetchComments()),
+    updateCart: (itemId, quantity) => (updateCart(itemId, quantity)),
+    removeCartItem: (itemId) => (removeCartItem(itemId)),
+    emptyCart: () => (emptyCart())
 };
 
 class UI extends Component {
@@ -85,6 +89,7 @@ class UI extends Component {
                     mainReviews={this.props.reviews.reviews.filter(review => review.itemId === +match.params.itemId)}
                     items={this.props.items}
                     reviews={this.props.reviews}
+                    updateCart={this.props.updateCart}
                 />
             );
         };
@@ -105,6 +110,9 @@ class UI extends Component {
                 <Toolbar 
                     items={this.props.items.items}
                     cart={this.props.cart}
+                    updateCart={this.props.updateCart}
+                    removeCartItem={this.props.removeCartItem}
+                    emptyCart={this.props.emptyCart}
                 />
                 <Sidebar
                     sidebar={
