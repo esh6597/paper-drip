@@ -5,17 +5,42 @@ import { connect } from 'react-redux';
 import { Loading } from './Loading';
 import { BsFillPlusCircleFill, BsFillDashCircleFill,
     BsFillHandThumbsUpFill, BsFillHandThumbsDownFill } from 'react-icons/bs';
-import Button from 'react-bootstrap/Button';
 
-import { updateCart, removeCartItem, emptyCart } from '../redux/ActionCreators';
+import { updateCart } from '../redux/ActionCreators';
 
 const mapDispatchToProps = {
-    updateCart: (itemId, quantity) => (updateCart(itemId, quantity)),
-    removeCartItem: (itemId) => (removeCartItem(itemId)),
-    emptyCart: () => (emptyCart())
-}
+    updateCart: (itemId, quantity) => (updateCart(itemId, quantity))
+};
 
 function Item(props) {
+
+    const [tempQuantity, setQuantity] = useState(1);
+    const handleChange = (value) => {
+        setQuantity(value);
+    }
+
+    const handleSubtract = () => {
+        if (tempQuantity < 1) {
+            console.log('Sorry, you can\'t subtract any more');
+            setQuantity(0);
+        } else {
+            setQuantity(tempQuantity - 1);
+        }
+    }
+
+    const handleAddition = () => {
+        setQuantity(tempQuantity + 1); //Quantity filter coming soon
+    }                                  //so you can't add more than available
+
+    const handleSubmit = (event) => {
+        if (tempQuantity < 1) {
+            console.log('Sorry, you added nothing.');
+        } else {
+            props.updateCart(props.mainItem.id, tempQuantity);
+            setQuantity(1);
+        }
+        event.preventDefault();
+    }
 
     const itemLoader = () => {
         if (props.items.isLoading) {
@@ -41,14 +66,24 @@ function Item(props) {
                 <div className="col-12 col-md-6">
                     <p>{props.mainItem.summary}</p>
                     <p>$ {props.mainItem.price.toFixed(2)}</p>
-                    <BsFillDashCircleFill />
-                    <input type="text" />
-                    <BsFillPlusCircleFill />
-                    <Button
-                        variant="primary"
-                    >
-                        Add to Cart
-                    </Button>
+                    <form onSubmit={handleSubmit}>
+                        <BsFillDashCircleFill 
+                            onClick={handleSubtract}
+                        />
+                        <input 
+                            type="text" 
+                            value={tempQuantity} 
+                            onChange={e => handleChange(e.target.value)}
+                        />
+                        <BsFillPlusCircleFill
+                            onClick={handleAddition}
+                        />
+                        <input 
+                            type="submit" 
+                            value="Add to Cart" 
+                            className="btn btn-primary"
+                        />
+                    </form>
                 </div>
                 <div className="col-12 col-md-6">
                     <p>{props.mainItem.description}</p>
