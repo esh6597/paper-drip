@@ -76,3 +76,41 @@ export const itemsFailed = errMess => ({
     type: ActionTypes.ITEMS_FAILED,
     payload: errMess
 });
+
+//Item Reviews
+
+export const fetchReviews = () => dispatch => {
+    
+    dispatch(reviewsLoading());
+
+    return fetch(baseUrl + 'reviews')
+        .then(response => {
+            if (response.ok) {
+                return response;
+            } else {
+                const error = new Error(`Error ${response.status}: ${response.statusText}`);
+                error.response = response;
+                throw error;
+            }
+        }, error => {
+            const errMess = new Error(error.message);
+            throw errMess;
+        })
+        .then(response => response.json())
+        .then(reviews => dispatch(addReviews(reviews)))
+        .catch(error => dispatch(reviewsFailed(error.message)));
+};
+
+export const reviewsLoading = () => ({
+    type: ActionTypes.REVIEWS_LOADING
+});
+
+export const reviewsFailed = errMess => ({
+    type: ActionTypes.REVIEWS_FAILED,
+    payload: errMess
+});
+
+export const addReviews = reviews => ({
+    type: ActionTypes.ADD_REVIEWS,
+    payload: reviews
+});

@@ -6,27 +6,24 @@ import { Control, Form, Errors } from 'react-redux-form';
 
 function Item(props) {
 
-    if (props.items.isLoading) {
-        return (
-            <Loading />
-        );
-    }
-    if (props.items.errMess) {
-        return (
-        <div className="col">
-            <p>{props.items.errMess}</p>
-        </div>
-        );
-    }
-
-    return(
-        <div className="container item">
-            <div className="row">
+    const itemLoader = () => {
+        if (props.items.isLoading) {
+            return (
+                <Loading />
+            );
+        }
+        if (props.items.errMess) {
+            return (
+            <div className="col">
+                <p>{props.items.errMess}</p>
+            </div>
+            );
+        }
+        return(
+            <React.Fragment>
                 <div className="col-12">
                     <h1>{props.mainItem.name}</h1>
                 </div>
-            </div>
-            <div className="row">
                 <div className="col-12 col-md-6 item-image">
                     <img src={baseUrl + props.mainItem.image} />
                 </div>
@@ -37,10 +34,70 @@ function Item(props) {
                     <input type="text" />
                     <BsFillPlusCircleFill />
                 </div>
-            </div>
-            <div className="row">
-                <div className="col-12">
+                <div className="col-12 col-md-6">
                     <p>{props.mainItem.description}</p>
+                </div>
+            </React.Fragment>
+        );
+    }
+
+    const reviewLoader = () => {
+        if (props.reviews.isLoading) {
+            return (
+                <Loading />
+            );
+        }
+        if (props.reviews.errMess) {
+            return (
+            <div className="col">
+                <p>{props.reviews.errMess}</p>
+            </div>
+            );
+        }
+
+        const parseDate = (dateString) => {
+            const dateObject = new Date(dateString);
+            const options = { month: 'long' };
+
+            return (
+                <React.Fragment>
+                    {new Intl.DateTimeFormat('en-US', options).format(dateObject)}
+                    {' '}{dateObject.getDate()}
+                    {', '}{dateObject.getFullYear()}
+                </React.Fragment>
+            );
+        };
+
+        return(
+            <React.Fragment>
+                {props.mainReviews.map(review => {
+                    return(
+                        <div>
+                            <h4>{review.name}</h4>
+                            <p>
+                                {review.rating}
+                                {review.rating > 1 ? ' Stars' : ' Star'}
+                            </p>
+                            <p>
+                                {review.summary}
+                            </p>
+                            <p>
+                                by {review.author}{' '}{parseDate(review.date)}
+                            </p>
+                        </div>
+                    );
+                })}
+            </React.Fragment>
+        );
+    }
+
+    return(
+        <div className="container item">
+            <div className="row">
+                {itemLoader()}
+                <div className="col-12 col-md-6">
+                    <h3>Reviews</h3>
+                    {reviewLoader()}
                 </div>
             </div>
         </div>

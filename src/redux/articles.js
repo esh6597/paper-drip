@@ -2,7 +2,6 @@ import * as ActionTypes from './ActionTypes';
 
 export const Articles = (state = {
     isLoading: true,
-    isLoggedIn: false,
     errMess: null,
     articles: []
 }, action) => {

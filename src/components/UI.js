@@ -16,7 +16,7 @@ import Blog from './Blog';
 import Shop from './Shop';
 import Item from './Item';
 
-import { fetchArticles, fetchItems } from '../redux/ActionCreators';
+import { fetchArticles, fetchItems, fetchReviews } from '../redux/ActionCreators';
 
 import { BsList } from 'react-icons/bs';
 import Button from '@restart/ui/esm/Button';
@@ -32,7 +32,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = {
     fetchArticles: () => (fetchArticles()),
-    fetchItems: () => (fetchItems())
+    fetchItems: () => (fetchItems()),
+    fetchReviews: () => (fetchReviews())
 };
 
 class UI extends Component {
@@ -50,6 +51,7 @@ class UI extends Component {
     componentDidMount() {
         this.props.fetchArticles();
         this.props.fetchItems();
+        this.props.fetchReviews();
     }
 
     onSetSidebarOpen(open) {
@@ -75,7 +77,9 @@ class UI extends Component {
             return(
                 <Item 
                     mainItem={this.props.items.items.filter(item => item.id === +match.params.itemId)[0]}
+                    mainReviews={this.props.reviews.reviews.filter(review => review.itemId === +match.params.itemId)}
                     items={this.props.items}
+                    reviews={this.props.reviews}
                 />
             );
         };
