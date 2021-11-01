@@ -68,7 +68,7 @@ function ShopLoader(props) {
         return (
             <div key={item.id} className="col-12 col-md-6 col-lg-4">
                 <Card>
-                    <Card.Img variant="top" src={baseUrl + item.image1} />
+                    <Card.Img variant="top" src={baseUrl + item.image} />
                     <Card.Body>
                         <Card.Title>{item.name}</Card.Title>
                         <Card.Text>{item.summary.length > 150 ? 
