@@ -15,8 +15,10 @@ import About from './About';
 import Blog from './Blog';
 import Shop from './Shop';
 import Item from './Item';
+import Article from './Article';
 
-import { fetchArticles, fetchItems, fetchReviews } from '../redux/ActionCreators';
+import { fetchArticles, fetchItems, 
+    fetchReviews, fetchComments } from '../redux/ActionCreators';
 
 import { BsList } from 'react-icons/bs';
 import Button from '@restart/ui/esm/Button';
@@ -33,7 +35,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = {
     fetchArticles: () => (fetchArticles()),
     fetchItems: () => (fetchItems()),
-    fetchReviews: () => (fetchReviews())
+    fetchReviews: () => (fetchReviews()),
+    fetchComments: () => (fetchComments())
 };
 
 class UI extends Component {
@@ -52,6 +55,7 @@ class UI extends Component {
         this.props.fetchArticles();
         this.props.fetchItems();
         this.props.fetchReviews();
+        this.props.fetchComments();
     }
 
     onSetSidebarOpen(open) {
@@ -80,6 +84,17 @@ class UI extends Component {
                     mainReviews={this.props.reviews.reviews.filter(review => review.itemId === +match.params.itemId)}
                     items={this.props.items}
                     reviews={this.props.reviews}
+                />
+            );
+        };
+
+        const ArticleWithId = ({match}) => {
+            return(
+                <Article 
+                    mainArticle={this.props.articles.articles.filter(article => article.id === +match.params.articleId)[0]}
+                    mainComments={this.props.comments.comments.filter(comment => comment.articleId === +match.params.articleId)}
+                    articles={this.props.articles}
+                    comments={this.props.comments}
                 />
             );
         };
@@ -124,6 +139,7 @@ class UI extends Component {
                             <Route path='/home' component={HomePage} />
                             <Route exact path='/about' render={() => <About />} />
                             <Route exact path='/blog' render={() => <Blog articles={this.props.articles} />} />
+                            <Route path='/blog/:articleId' component={ArticleWithId} />
                             <Route exact path='/shop' render={() => <Shop items={this.props.items} />} />
                             <Route path='/shop/:itemId' component={ItemWithId} />
                             <Redirect to='/home' />

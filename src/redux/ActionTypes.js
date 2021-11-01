@@ -12,6 +12,12 @@ export const ADD_ITEMS = "ADD_ITEMS";
 export const ITEMS_LOADING = "ITEMS_LOADING";
 export const ITEMS_FAILED = "ITEMS_FAILED";
 
+export const ADD_COMMENTS = "ADD_COMMENTS";
+export const COMMENTS_LOADING = "COMMENTS_LOADING";
+export const COMMENTS_FAILED = "COMMENTS_FAILED";
+//Future feature: posting comments
+//export const UPDATE_COMMENTS = "UPDATE_COMMENTS"
+
 //Sorry, this feature isn't available yet. Coming soon!
 //export const LOG_IN = "LOG_IN"; 
 //export const NEW_USER = "NEW_USER";

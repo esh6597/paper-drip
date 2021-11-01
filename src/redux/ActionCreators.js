@@ -114,3 +114,41 @@ export const addReviews = reviews => ({
     type: ActionTypes.ADD_REVIEWS,
     payload: reviews
 });
+
+//Article comments
+
+export const fetchComments = () => dispatch => {
+    
+    dispatch(commentsLoading());
+
+    return fetch(baseUrl + 'comments')
+        .then(response => {
+            if (response.ok) {
+                return response;
+            } else {
+                const error = new Error(`Error ${response.status}: ${response.statusText}`);
+                error.response = response;
+                throw error;
+            }
+        }, error => {
+            const errMess = new Error(error.message);
+            throw errMess;
+        })
+        .then(response => response.json())
+        .then(comments => dispatch(addComments(comments)))
+        .catch(error => dispatch(commentsFailed(error.message)));
+};
+
+export const commentsLoading = () => ({
+    type: ActionTypes.COMMENTS_LOADING
+});
+
+export const commentsFailed = errMess => ({
+    type: ActionTypes.COMMENTS_FAILED,
+    payload: errMess
+});
+
+export const addComments = comments => ({
+    type: ActionTypes.ADD_COMMENTS,
+    payload: comments
+});
