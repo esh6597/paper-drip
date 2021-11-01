@@ -91,8 +91,10 @@ function Item(props) {
                                 by {review.author}{' '}{parseDate(review.date)}
                             </p>
                             <p>
-                                {review.likes}{' '}<BsFillHandThumbsUpFill />{' '}
-                                {review.dislikes}{' '}<BsFillHandThumbsDownFill />
+                                {review.likes} out of {review.likes + review.dislikes} people found this review helpful.
+                            </p>
+                            <p>
+                                Did this review help you? Sorry, you can't tell me yet.
                             </p>
                         </div>
                     );
