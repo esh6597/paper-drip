@@ -155,14 +155,15 @@ export const addComments = comments => ({
 
 //Cart
 
-export const updateCart = cartItem => ({
+export const updateCart = (itemId, quantity) => ({
     type: ActionTypes.UPDATE_CART,
-    payload: cartItem
+    itemId: itemId,
+    quantity: quantity
 });
 
-export const removeCartItem = cartItem => ({
+export const removeCartItem = itemId => ({
     type: ActionTypes.REMOVE_CART_ITEM,
-    payload: cartItem
+    itemId: itemId
 });
 
 export const emptyCart = () => ({
