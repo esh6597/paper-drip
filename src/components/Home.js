@@ -16,10 +16,22 @@ function Welcome() {
     return (
         <div className="welcome col-lg-7 col-12">
             <h1>Welcome</h1>
-            <p>Thanks for stopping by! Paper Drip is a personal passion project I started about origami
+            <p>
+                Thanks for stopping by! Paper Drip is a personal passion project I started about origami
                 to work on my web development skills, but I really hope it motivates you to discover and
-                 enjoy this hobby as much as I do.</p>
-            <p>Check out the <Link to='/about'>about page</Link> for more information!</p>
+                 enjoy this hobby as much as I do.
+            </p>
+            <p>
+                Check out the <Link to='/about'>about page</Link> for more information!
+            </p>
+            <p>
+                Here to learn, or just new? Browse my <Link to='/blog'>blog </Link>
+                 to learn more about origami, or even fold something new! Now 
+                that you've read this, you have to.
+            </p>
+            <p>
+                I'll be waiting.
+            </p>
         </div>
     );
 }

@@ -5,7 +5,7 @@ import { baseUrl } from '../shared/baseUrl';
 import { BsSearch, BsPersonFill, BsCartFill } from "react-icons/bs";
 import variables from '../variables.module.scss';
 
-class Header extends Component {
+class Toolbar extends Component {
 
     constructor(props) {
         super(props);
@@ -22,12 +22,15 @@ class Header extends Component {
     render() {
         return (
             <div className='toolbar'>
-                <BsSearch />
-                <BsPersonFill />
-                <BsCartFill />
+                <div></div>
+                <div>
+                    <BsSearch />
+                    <BsPersonFill />
+                    <BsCartFill />
+                </div>
             </div>
         );
     }
 }
 
-export default Header;
+export default Toolbar;

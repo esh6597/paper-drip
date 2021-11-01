@@ -20,7 +20,7 @@ function ShopLoader(props) {
         );
     }
 
-    let items = props.items;    //THE GREAT FILTER
+    let items = props.items;
 
     if (props.under5) {
         items = items.filter(item => item.price <= 5);

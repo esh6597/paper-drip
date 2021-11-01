@@ -31,10 +31,12 @@
   margin: 0px;
   background-color: rgba(0, 0, 0, 0);
   border: none;
+  border-radius: 1vh;
   opacity: 70%;
   align-items: center;
   transition: opacity 0.2s ease-in-out;
   padding: 0;
+  overflow: hidden;
 }
 * .card:hover {
   opacity: 100%;
@@ -88,13 +90,13 @@
 }
 
 .content {
-  margin-top: 32px;
+  margin-top: 40px;
   background-color: #fcedc9;
 }
 
 .sidebar {
   box-sizing: border-box;
-  border-top: 32px solid #319ea2;
+  border-top: 40px solid #319ea2;
   padding-top: 6vh;
 }
 .sidebar .nav-link {
@@ -119,6 +121,9 @@
 
 .sidebarButton {
   position: fixed;
+  display: absolute;
+  width: 36px;
+  height: 40px;
   top: 0;
   left: 0;
   background-color: #319ea2;
@@ -128,21 +133,24 @@
   z-index: 4;
 }
 .sidebarButton * {
-  color: #fcedc9;
+  color: #fff;
 }
 
 .toolbar {
   position: sticky;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   top: 0;
   left: 0;
-  z-index: 3;
-  padding-left: 32px;
-  padding-right: 3px;
+  z-index: 4;
+  padding-left: 36px;
+  padding-right: 3%;
   background-color: #319ea2;
-  height: 32px;
+  height: 40px;
   width: 100%;
-  color: #fcedc9;
-  font-size: 28px;
+  color: #fff;
+  font-size: 22px;
   text-align: right;
 }
 .toolbar * {
@@ -181,11 +189,11 @@
 }
 .featured .card {
   margin: 10px;
-  background-color: rgba(0, 0, 0, 0);
-  border: 1px solid #319ea2;
+  background-color: #fff;
+  border: none;
   opacity: 70%;
   align-items: center;
-  height: 95%;
+  height: 30vh;
   width: 100%;
 }
 .featured .card:hover {
@@ -206,7 +214,6 @@
 .featured .card .card-text {
   font: 300 16px/1.2 "Mukta", sans-serif;
   object-fit: cover;
-  height: 60%;
   align-content: center;
 }
 .featured .card .card-body {

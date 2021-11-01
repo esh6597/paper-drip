@@ -24,6 +24,7 @@ $color-cool-dark: #319ea2;
 
 $color-text: #40373a;
 $color-background: #fcedc9;
+$color-white: #fff;
 
 // Style
 
@@ -69,10 +70,12 @@ $color-background: #fcedc9;
         margin: 0px;
         background-color: rgba(0,0,0,0);
         border: none;
+        border-radius: 1vh;
         opacity: 70%;
         align-items: center;
         transition: opacity 0.2s ease-in-out;
         padding: 0;
+        overflow: hidden;
     
         &:hover {
             opacity: 100%;
@@ -139,13 +142,13 @@ $color-background: #fcedc9;
 }
 
 .content {
-    margin-top: 32px;
+    margin-top: 40px;
     background-color: $color-background;
 }
 
 .sidebar {
     box-sizing: border-box;
-    border-top: 32px solid $color-cool-dark;
+    border-top: 40px solid $color-cool-dark;
     padding-top: 6vh;
 
     .nav-link {
@@ -174,6 +177,9 @@ $color-background: #fcedc9;
 
 .sidebarButton {
     position: fixed;
+    display: absolute;
+    width: 36px;
+    height: 40px;
     top: 0;
     left: 0;
     background-color: $color-cool-dark;
@@ -183,22 +189,25 @@ $color-background: #fcedc9;
     z-index: 4;
 
     * {
-        color: $color-background;
+        color: $color-white;
     }
 }
 
 .toolbar {
     position: sticky;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     top: 0;
     left: 0;
-    z-index: 3;
-    padding-left: 32px;
-    padding-right: 3px;
+    z-index: 4;
+    padding-left: 36px;
+    padding-right: 3%;
     background-color: $color-cool-dark;
-    height: 32px;
+    height: 40px;
     width: 100%;
-    color: $color-background;
-    font-size: 28px;
+    color: $color-white;
+    font-size: 22px;
     text-align: right;
 
     * {
@@ -245,11 +254,11 @@ $color-background: #fcedc9;
 
     .card {
         margin: 10px;
-        background-color: rgba(0,0,0,0);
-        border: 1px solid $color-cool-dark;
+        background-color: $color-white;
+        border: none;
         opacity: 70%;
         align-items: center;
-        height: 95%;
+        height: 30vh;
         width: 100%;
     
         &:hover {
@@ -273,7 +282,6 @@ $color-background: #fcedc9;
         .card-text {
             font: $font-text-small;
             object-fit: cover;
-            height: 60%;
             align-content: center;
         }
 

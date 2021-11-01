@@ -8,7 +8,7 @@ import { connect } from 'react-redux';
 import Sidebar from 'react-sidebar';
 import { Link } from 'react-router-dom';
 
-import Header from './Header';
+import Toolbar from './Toolbar';
 import Footer from './Footer';
 import Home from './Home';
 import About from './About';
@@ -18,6 +18,7 @@ import Shop from './Shop';
 import { fetchArticles, fetchItems } from '../redux/ActionCreators';
 
 import { BsList } from 'react-icons/bs';
+import Button from '@restart/ui/esm/Button';
 
 const mapStateToProps = state => {
     return {
@@ -67,11 +68,15 @@ class UI extends Component {
                     items={this.props.items}
                 />
             );
-        }
+        };
+
+        const ItemPage = ({match}) => {
+
+        };
 
         return (
             <div>
-                <Header />
+                <Toolbar />
                 <Sidebar
                     sidebar={
                         <div className='sidebar'>
@@ -101,9 +106,9 @@ class UI extends Component {
                         } 
                     }}
                 >
-                    <div onClick={() => this.toggleSidebar()} className='sidebarButton'>
+                    <Button onClick={() => this.toggleSidebar()} className='sidebarButton'>
                         <BsList style={{fontSize: 32}} />
-                    </div>
+                    </Button>
                     <div className='content'>
                         <Switch>
                             <Route path='/home' component={HomePage} />
