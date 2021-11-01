@@ -3,7 +3,8 @@ import { NavLink } from 'react-router-dom';
 import { baseUrl } from '../shared/baseUrl';
 import { connect } from 'react-redux';
 
-import { BsSearch, BsPersonFill, BsCartFill } from "react-icons/bs";
+import { BsSearch, BsPersonFill, BsCartFill, 
+    BsFillPlusCircleFill, BsFillDashCircleFill } from "react-icons/bs";
 import variables from '../variables.module.scss';
 import Collapse from 'react-bootstrap/Collapse';
 
@@ -24,31 +25,62 @@ class Toolbar extends Component {
         this.setState({isCartOpen: !this.state.isCartOpen});
     }
 
+    handleChange () {
+
+    }
+
     render() {
         const cartDisplay = this.props.cart.cart.map(cartItem => {
             const referencedItem = this.props.items.find(reference => reference.id === cartItem.id)
             return (
-                <div className="col-12" key={referencedItem.id}>
-                    {referencedItem.name}{' | '}Quantity:{' '}{cartItem.quantity}
+                <div className="row d-flex align-items-center cart-body" key={referencedItem.id}>
+                    <div className="col-7 cart-title">
+                        <p>{referencedItem.name}</p>
+                        <p class="cart-summary">{referencedItem.summary.length > 25 ? 
+                                referencedItem.summary.slice(0,25).trim() + '...'
+                                : referencedItem.summary
+                            }
+                        </p>
+                    </div>
+                    <div className="col-5 cart-quantity">
+                        <p>Quantity:</p>
+                        <form>
+                            <BsFillDashCircleFill 
+                                onClick={this.handleSubtract}
+                            />
+                            <input 
+                                type="text" 
+                                value={cartItem.quantity} 
+                                onChange={e => this.handleChange(e.target.value)}
+                            />
+                            <BsFillPlusCircleFill
+                                onClick={this.handleAddition}
+                            />
+                        </form>
+                    </div>
                 </div>
             );
         });
 
 
         return (
-            <div className='toolbar'>
-                <div></div>
-                <div>
-                    <BsCartFill 
-                        onClick={this.toggleCart}
-                    />
+            <React.Fragment>
+                <div className='toolbar'>
+                    <div></div>
+                    <div>
+                        <BsCartFill 
+                            onClick={this.toggleCart}
+                        />
+                    </div>
+                </div>
+                <div className="cart-wrapper">
                     <Collapse in={this.state.isCartOpen}>
-                        <div class="cart-body">
+                        <div>
                             {cartDisplay}
                         </div>
                     </Collapse>
                 </div>
-            </div>
+            </React.Fragment>
         );
     }
 }

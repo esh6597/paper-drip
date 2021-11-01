@@ -62,22 +62,29 @@ function Item(props) {
                     <p>{props.mainItem.summary}</p>
                     <p>$ {props.mainItem.price.toFixed(2)}</p>
                     <form onSubmit={handleSubmit}>
-                        <BsFillDashCircleFill 
-                            onClick={handleSubtract}
-                        />
-                        <input 
-                            type="text" 
-                            value={tempQuantity} 
-                            onChange={e => handleChange(e.target.value)}
-                        />
-                        <BsFillPlusCircleFill
-                            onClick={handleAddition}
-                        />
-                        <input 
-                            type="submit" 
-                            value="Add to Cart" 
-                            className="btn btn-primary"
-                        />
+                        <div className="d-flex justify-content-between">
+                            <div>
+                                <BsFillDashCircleFill 
+                                    onClick={handleSubtract}
+                                />
+                                <input 
+                                    type="text" 
+                                    value={tempQuantity} 
+                                    onChange={e => handleChange(e.target.value)}
+                                    className="number-display"
+                                />
+                                <BsFillPlusCircleFill
+                                    onClick={handleAddition}
+                                />
+                            </div>
+                            <div className="submit">
+                                <input 
+                                    type="submit" 
+                                    value="Add to Cart" 
+                                    className="btn btn-primary"
+                                />
+                            </div>
+                        </div>
                     </form>
                 </div>
                 <div className="col-12 col-md-6">

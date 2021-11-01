@@ -157,6 +157,43 @@
   display: inline;
 }
 
+.cart-wrapper {
+  position: absolute;
+  right: 0;
+  top: 40px;
+  z-index: 4;
+  background-color: #88d5cd;
+  width: 40vh;
+}
+.cart-wrapper .cart-body {
+  background-color: #fcedc9;
+  color: #40373a;
+  margin: 1vh;
+  padding: 1vh;
+}
+.cart-wrapper .cart-body .cart-title {
+  text-align: left;
+  justify-content: space-between;
+}
+.cart-wrapper .cart-body .cart-quantity {
+  text-align: center;
+  border-left: 1px solid #88d5cd;
+}
+.cart-wrapper .cart-body .cart-quantity form svg {
+  margin: 0 5px;
+  color: #dd5964;
+}
+.cart-wrapper .cart-body .cart-quantity form input {
+  width: 50px;
+}
+.cart-wrapper .cart-body .cart-summary {
+  font: 300 16px/1.2 "Mukta", sans-serif;
+  margin-top: 5px;
+}
+.cart-wrapper .cart-body p {
+  margin: 0;
+}
+
 .splash {
   display: block;
   position: relative;
@@ -372,4 +409,35 @@
 .shop .control {
   margin: 3vh 0 3vh 0;
   line-height: 3;
+}
+
+.item h1 {
+  text-align: center;
+  margin: 5vh;
+}
+.item .number-display {
+  width: 50px;
+}
+.item form svg {
+  margin: 5px;
+}
+.item .item-image img {
+  width: 100%;
+  margin-bottom: 3vh;
+}
+.item .quantity-display {
+  display: inline;
+}
+.item .quantity-display input {
+  width: 2vh;
+}
+.item .submit input {
+  background-color: #dd5964;
+  border-color: #9e4450;
+}
+.item .submit input:hover {
+  background-color: #f68e86;
+}
+.item .submit input:active {
+  background-color: #9e4450;
 }
