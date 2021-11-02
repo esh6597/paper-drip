@@ -19,7 +19,8 @@ import Article from './Article';
 
 import { fetchArticles, fetchItems, 
     fetchReviews, fetchComments,
-    updateCart, removeCartItem, emptyCart } from '../redux/ActionCreators';
+    updateCart, removeCartItem, emptyCart,
+    postComment } from '../redux/ActionCreators';
 
 import { BsList } from 'react-icons/bs';
 import Button from '@restart/ui/esm/Button';
@@ -41,7 +42,8 @@ const mapDispatchToProps = {
     fetchComments: () => (fetchComments()),
     updateCart: (itemId, quantity) => (updateCart(itemId, quantity)),
     removeCartItem: (itemId) => (removeCartItem(itemId)),
-    emptyCart: () => (emptyCart())
+    emptyCart: () => (emptyCart()),
+    postComment: (articleId, author, summary) => (postComment(articleId, author, summary))
 };
 
 class UI extends Component {
@@ -101,6 +103,7 @@ class UI extends Component {
                     mainComments={this.props.comments.comments.filter(comment => comment.articleId === +match.params.articleId)}
                     articles={this.props.articles}
                     comments={this.props.comments}
+                    postComment={this.props.postComment}
                 />
             );
         };

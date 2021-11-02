@@ -350,6 +350,29 @@
   margin-bottom: 10px;
 }
 
+.article .item-image {
+  margin-bottom: 5vh;
+}
+.article .item-image img {
+  object-fit: cover;
+  overflow: hidden;
+  width: 100%;
+  height: 50vh;
+}
+.article .author {
+  background-color: #88d5cd;
+  padding: 2vh 2vh;
+}
+.article .author p {
+  margin-bottom: 0;
+}
+.article .title {
+  padding-left: 3vh;
+}
+.article .col-12 {
+  margin-bottom: 5vh;
+}
+
 .shop .header {
   background-image: linear-gradient(to right, #319ea2, #f68e86, #9e4450);
 }

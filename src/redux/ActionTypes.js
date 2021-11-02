@@ -15,8 +15,7 @@ export const ITEMS_FAILED = "ITEMS_FAILED";
 export const ADD_COMMENTS = "ADD_COMMENTS";
 export const COMMENTS_LOADING = "COMMENTS_LOADING";
 export const COMMENTS_FAILED = "COMMENTS_FAILED";
-//Future feature: posting comments
-//export const UPDATE_COMMENTS = "UPDATE_COMMENTS"
+export const UPDATE_COMMENTS = "UPDATE_COMMENTS";
 
 export const UPDATE_CART = "UPDATE_CART";
 export const REMOVE_CART_ITEM = "REMOVE_CART_ITEM";

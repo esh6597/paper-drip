@@ -153,6 +153,48 @@ export const addComments = comments => ({
     payload: comments
 });
 
+export const updateComments = newComment => ({
+    type: ActionTypes.UPDATE_COMMENTS,
+    payload: newComment
+});
+
+export const postComment = (articleId, author, summary) => dispatch => {
+    const newComment = {
+        articleId: articleId,
+        likes: 0,
+        dislikes: 0,
+        author: author,
+        date: null,
+        summary: summary
+    };
+
+    newComment.date = new Date().toJSON();
+
+    return fetch(baseUrl + 'comments', {
+        method: "POST",
+        body: JSON.stringify(newComment),
+        headers: {
+            "Content-Type": "application/json"
+        }
+    }).then(response => {
+        if (response.ok) {
+            return response;
+        } else {
+            const error = new Error(`Error ${response.status}: ${response.statusText}`);
+            error.response = response;
+            throw error;
+        }
+    }, error => {
+        throw error;
+    })
+    .then(response => response.json())
+    .then(response => dispatch(updateComments(response)))
+    .catch(error => {
+        console.log('From postComment(): ', error.message);
+        alert("Sorry, your action couldn't be posted.\nError: " + error.message);
+    });
+};
+
 //Cart
 
 export const updateCart = (itemId, quantity) => ({
