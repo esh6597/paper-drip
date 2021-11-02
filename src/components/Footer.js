@@ -34,8 +34,9 @@ function Footer(props) {
                                 Shop
                             </Link>
                         </div>
+                    <p className="m-0">The Bee Movie script belongs to its writers: Jerry Seinfeld, Spike Feresten, Barry Marder, and Andy Robin.</p>
                 </div>
-                <div className="col-6 col-sm-4 text-center socials">
+                <div className="col-6 col-md-4 text-center socials">
                     <h5 className="footer-title">Social</h5>
                     <p>Note: none of these links work here.</p>
                         <div className="social-icons">

@@ -121,10 +121,10 @@ function About(props) {
             <div className="header about">
                 <h2>About</h2>
             </div>
-            <div className="container">
+            <div className="container about-body">
                 <div className="row">
                     <div className="col-12 col-md-5">
-
+                        <img src={baseUrl + 'media/images/me.jpg'} className="me" />
                     </div>
                     <div className="col-12 col-md-7">
                         <h3>What the Heck is Paper Drip?</h3>
@@ -146,12 +146,6 @@ function About(props) {
                     </div>
                 </div>
                 <div className="row">
-                    <div className="col-12">
-                        <h3>Site Features</h3>
-                        <p>Collapsed list about the sections coming soon.</p>
-                    </div>
-                </div>
-                <div className="row">
                     <div className="col-12 col-md-7">
                         <h3>About Me</h3>
                         <p style={{fontStyle: 'italic'}}>
@@ -169,7 +163,7 @@ function About(props) {
                         </p>                  
                     </div>
                     <div className="col-12 col-md-5">
-
+                        <img src={baseUrl + 'media/images/clown-roses.png'} className="me" />
                     </div>
                 </div>
                 <div className="row">
@@ -221,42 +215,6 @@ function About(props) {
                                 <Card.Body>
                                     <Card.Text>Hiring, or just curious? Check out my non-origami creations 
                                         here. Note: website currently doesn't exist.
-                                    </Card.Text>
-                                </Card.Body>
-                            </Card>
-                        </a>
-                    </div>
-                    <div className="col-12 col-sm-6 col-md-4">
-                        <a href="">
-                            <Card>
-                                <Card.Img variant="top" src={baseUrl + 'media/images/circle-brown.png'} />
-                                <Card.Title>Dummy Link</Card.Title>
-                                <Card.Body>
-                                    <Card.Text>Hehe dummy
-                                    </Card.Text>
-                                </Card.Body>
-                            </Card>
-                        </a>
-                    </div>
-                    <div className="col-12 col-sm-6 col-md-4">
-                        <a href="">
-                            <Card>
-                                <Card.Img variant="top" src={baseUrl + 'media/images/circle-red.png'} />
-                                <Card.Title>Dummy Link</Card.Title>
-                                <Card.Body>
-                                    <Card.Text>Hehe dummy
-                                    </Card.Text>
-                                </Card.Body>
-                            </Card>
-                        </a>
-                    </div>
-                    <div className="col-12 col-sm-6 col-md-4">
-                        <a href="">
-                            <Card>
-                                <Card.Img variant="top" src={baseUrl + 'media/images/circle-blue.png'} />
-                                <Card.Title>Dummy Link</Card.Title>
-                                <Card.Body>
-                                    <Card.Text>It was funny the first time
                                     </Card.Text>
                                 </Card.Body>
                             </Card>

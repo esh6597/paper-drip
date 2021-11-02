@@ -23,6 +23,9 @@
   color: #f68e86;
   transition: color 0.2s ease-in-out;
 }
+* .row {
+  padding: 1vh 0;
+}
 * .tag {
   text-align: center;
 }
@@ -60,6 +63,7 @@
   margin-bottom: 3vh;
   color: #fcedc9;
   min-height: 20vh;
+  width: 100vw;
 }
 * .header h2 {
   text-align: center;
@@ -207,7 +211,8 @@
   margin-bottom: 3vh;
   background-image: radial-gradient(#88d5cd, #319ea2);
   color: #fcedc9;
-  min-height: 60vh;
+  height: 60vh;
+  overflow: hidden;
 }
 .splash h2 {
   margin: 0;
@@ -283,6 +288,23 @@
 
 .about {
   background-image: linear-gradient(to right, #f68e86, #88d5cd);
+}
+
+.about-body h3 {
+  color: #9e4450;
+}
+.about-body .me {
+  width: 90%;
+  height: 90%;
+  object-fit: cover;
+  border-radius: 1vh;
+}
+.about-body .btn-primary {
+  border: none;
+  color: #fff;
+  background-color: #319ea2;
+  margin: 0;
+  margin: 1vh;
 }
 
 .blog .header {
@@ -478,7 +500,7 @@
 
 .footer {
   padding: 3vh;
-  background-color: #319ea2;
+  background-image: linear-gradient(to bottom, #319ea2, #88d5cd);
   color: #9e4450;
 }
 .footer * a {
@@ -492,7 +514,7 @@
 }
 .footer * .socials, .footer .site-links {
   background-color: #88d5cd;
-  margin: auto;
+  margin: 5vh;
   padding: 3vh 3vh 5vh 3vh;
   border-radius: 1vh;
 }
@@ -510,6 +532,7 @@
   flex-direction: row;
   justify-content: space-around;
   color: #9e4450;
+  margin-bottom: 5vh;
 }
 .footer .footer-title {
   font: 400 20px/1.2 "Mukta", sans-serif;

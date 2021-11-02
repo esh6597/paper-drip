@@ -61,6 +61,10 @@ $color-white: #fff;
         }
     }
 
+    .row {
+        padding: 1vh 0;
+    }
+
     .tag {
         text-align: center;
     }
@@ -104,6 +108,7 @@ $color-white: #fff;
         margin-bottom: 3vh;
         color: $color-background;
         min-height: 20vh;
+        width: 100vw;
     
         h2 {
             text-align: center;
@@ -279,7 +284,8 @@ $color-white: #fff;
     margin-bottom: 3vh;
     background-image: radial-gradient($color-cool-light, $color-cool-dark);
     color: $color-background;
-    min-height: 60vh;
+    height: 60vh;
+    overflow: hidden;
 
     h2 {
         margin: 0;
@@ -368,6 +374,26 @@ $color-white: #fff;
 
 .about {
     background-image: linear-gradient(to right, $color-warm-light, $color-cool-light);
+}
+
+.about-body {
+    h3 {
+        color: $color-warm-dark;
+    }
+    .me {
+        width: 90%;
+        height: 90%;
+        object-fit: cover;
+        border-radius: 1vh;
+    }
+
+    .btn-primary {
+        border: none;
+        color: $color-white;
+        background-color: $color-cool-dark;
+        margin: 0;
+        margin: 1vh;
+    }
 }
 
 .blog {
@@ -619,12 +645,12 @@ $color-white: #fff;
         }
     }
 
-    background-color: $color-cool-dark;
+    background-image: linear-gradient(to bottom, $color-cool-dark, $color-cool-light);
     color: $color-warm-dark;
 
     * .socials, .site-links {
         background-color: $color-cool-light;
-        margin: auto;
+        margin: 5vh;
         padding: 3vh 3vh 5vh 3vh;
         border-radius: 1vh;
         * {
@@ -643,6 +669,7 @@ $color-white: #fff;
             flex-direction: row;
             justify-content: space-around;
             color: $color-warm-dark;
+            margin-bottom: 5vh;
         }
     }
     

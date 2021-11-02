@@ -7,7 +7,14 @@ import { Loading } from './Loading';
 function Splash() {
     return (
         <div className="splash">
-           
+            <img 
+                src={baseUrl + 'media/images/blue-corsage-bag.jpg'} 
+                className="header"
+                style={{
+                    objectFit: 'cover',
+                    margin: 0
+                }}
+            />
         </div>
     );
 }
