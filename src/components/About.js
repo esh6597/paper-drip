@@ -1,56 +1,108 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Card from 'react-bootstrap/Card';
 import { baseUrl } from '../shared/baseUrl';
 import { Link } from 'react-router-dom';
+
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 
 function ContactForm(props) {
+    const [firstName, setFirstName] = useState('');
+    const [lastName, setLastName] = useState('');
+    const [email, setEmail] = useState('');
+    const [phoneNum, setPhone] = useState('');
+    const [feedback, setFeedback] = useState('');
 
-    const handleSubmit = () => {
-        
+    const handleSubmit = (event, firstName, lastName, email, phoneNum, feedback) => {
+        event.preventDefault();
+        console.log('Thanks for your feedback!');
+        console.log(firstName, lastName, email, phoneNum, feedback);
+
+        setFirstName('');
+        setLastName('');
+        setEmail('');
+        setPhone('');
+        setFeedback('');
     }
 
     return (
         <React.Fragment>
             <Form
                 noValidate
-                onSubmit={() => handleSubmit}
+                onSubmit={e => handleSubmit(e, firstName, lastName, email, phoneNum, feedback)}
             >
-                <Form.Group>
-                    <Form.Label>First Name</Form.Label>
-                    <Form.Control
-                        as='input'
-                        type='text'
-                    />
-                </Form.Group>
-                <Form.Group>
-                    <Form.Label>Last Name</Form.Label>
-                    <Form.Control
-                        as='input'
-                        type='text'
-                    />
-                </Form.Group>
-                <Form.Group>
-                    <Form.Label>Email</Form.Label>
-                    <Form.Control
-                        as='input'
-                        type='email'
-                    />
-                </Form.Group>
-                <Form.Group>
-                    <Form.Label>Phone Number</Form.Label>
-                    <Form.Control
-                        as='input'
-                        type='tel'
-                    />
-                </Form.Group>
-                <Form.Group>
-                    <Form.Label>Your Message</Form.Label>
-                    <Form.Control
-                        as='textarea'
-                    />
-                </Form.Group>
+                <div className="row">
+                    <div className="col-12 col-md-6">
+                        <Form.Group controlId="firstName" as={Row}>
+                            <Form.Label column sm={3}>First Name</Form.Label>
+                            <Col sm={9}>
+                                <Form.Control
+                                    as='input'
+                                    type='text'
+                                    value={firstName}
+                                    onChange={e => setFirstName(e.target.value.toString())}
+                                />
+                            </Col>
+                        </Form.Group>
+                    </div>
+                    <div className="col-12 col-md-6">
+                        <Form.Group controlId="lastName" as={Row}>
+                            <Form.Label column sm={3}>Last Name</Form.Label>
+                            <Col sm={9}>
+                                <Form.Control
+                                    as='input'
+                                    type='text'
+                                    value={lastName}
+                                    onChange={e => setLastName(e.target.value.toString())}
+                                />
+                            </Col>
+                        </Form.Group>
+                    </div>
+                </div>
+                <div className="row">
+                    <div className="col-12 col-md-7">
+                        <Form.Group controlId="email" as={Row}>
+                            <Form.Label column sm={3}>Email</Form.Label>
+                            <Col sm={9}>
+                                <Form.Control
+                                    as='input'
+                                    type='email'
+                                    value={email}
+                                    onChange={e => setEmail(e.target.value.toString())}
+                                />
+                            </Col>
+                        </Form.Group>
+                    </div>
+                    <div className="col-12 col-md-5">
+                        <Form.Group controlId="phoneNum" as={Row}>
+                            <Form.Label column sm={3}>Phone</Form.Label>
+                            <Col sm={9}>
+                                <Form.Control
+                                    as='input'
+                                    type='tel'
+                                    value={phoneNum}
+                                    onChange={e => setPhone(e.target.value.toString())}
+                                />
+                            </Col>
+                        </Form.Group>
+                    </div>
+                </div>
+    
+                <div className="row">
+                    <div className="col-12">
+                        <Form.Group controlId="feedback">
+                            <Form.Label>Your Message</Form.Label>
+                            <Form.Control
+                                as='textarea'
+                                value={feedback}
+                                onChange={e => setFeedback(e.target.value.toString())}
+                            />
+                        </Form.Group>
+                    </div>
+                </div>
+                
                 <Form.Group>
                     <Button
                         type="submit"
@@ -123,6 +175,10 @@ function About(props) {
                 <div className="row">
                     <div className="col">
                         <h3>Contact Me</h3>
+                        <p>
+                            Note: this form currently does nothing, but type away to
+                             your heart's content.                             
+                        </p>
                         <ContactForm />
                     </div>
                 </div>

@@ -52,7 +52,6 @@ $color-white: #fff;
 
     a {
         text-decoration: none;
-        font: $font-text-bold;
         color: $color-warm;
         transition: color 0.2s ease-in-out;
     
@@ -137,8 +136,6 @@ $color-white: #fff;
 
 .App {
     background-color: $color-background;
-    font: $font-text;
-    color: $color-warm;
 }
 
 .content {
@@ -606,5 +603,61 @@ $color-white: #fff;
         input:active {
             background-color: $color-warm-dark;
         }
+    }
+}
+
+.footer {
+    padding: 3vh;
+
+    * a {
+        color: $color-warm-dark;
+        p {
+            font: $font-text-small;
+        }
+        h6 {
+            display: inline;
+        }
+    }
+
+    background-color: $color-cool-dark;
+    color: $color-warm-dark;
+
+    * .socials, .site-links {
+        background-color: $color-cool-light;
+        margin: auto;
+        padding: 3vh 3vh 5vh 3vh;
+        border-radius: 1vh;
+        * {
+            text-align: center;
+        }
+    }
+
+    .site-links {
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
+
+        .links {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            color: $color-warm-dark;
+        }
+    }
+    
+    .footer-title {
+        font: $font-text-bold;
+        margin: 3vh;
+    }
+
+    .socials {
+
+        .social-icons {
+            display: flex;
+            justify-content: space-around;
+            padding: 0 5vh;
+        }
+
     }
 }

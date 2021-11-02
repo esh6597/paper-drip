@@ -16,7 +16,6 @@
 }
 * a {
   text-decoration: none;
-  font: 400 20px/1.2 "Mukta", sans-serif;
   color: #dd5964;
   transition: color 0.2s ease-in-out;
 }
@@ -85,8 +84,6 @@
 
 .App {
   background-color: #fcedc9;
-  font: 300 20px/1.2 "Mukta", sans-serif;
-  color: #dd5964;
 }
 
 .content {
@@ -477,4 +474,49 @@
 }
 .item .submit input:active {
   background-color: #9e4450;
+}
+
+.footer {
+  padding: 3vh;
+  background-color: #319ea2;
+  color: #9e4450;
+}
+.footer * a {
+  color: #9e4450;
+}
+.footer * a p {
+  font: 300 16px/1.2 "Mukta", sans-serif;
+}
+.footer * a h6 {
+  display: inline;
+}
+.footer * .socials, .footer .site-links {
+  background-color: #88d5cd;
+  margin: auto;
+  padding: 3vh 3vh 5vh 3vh;
+  border-radius: 1vh;
+}
+.footer * .socials *, .footer .site-links * {
+  text-align: center;
+}
+.footer .site-links {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+}
+.footer .site-links .links {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  color: #9e4450;
+}
+.footer .footer-title {
+  font: 400 20px/1.2 "Mukta", sans-serif;
+  margin: 3vh;
+}
+.footer .socials .social-icons {
+  display: flex;
+  justify-content: space-around;
+  padding: 0 5vh;
 }
