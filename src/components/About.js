@@ -2,6 +2,66 @@ import React from 'react';
 import Card from 'react-bootstrap/Card';
 import { baseUrl } from '../shared/baseUrl';
 import { Link } from 'react-router-dom';
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
+
+function ContactForm(props) {
+
+    const handleSubmit = () => {
+        
+    }
+
+    return (
+        <React.Fragment>
+            <Form
+                noValidate
+                onSubmit={() => handleSubmit}
+            >
+                <Form.Group>
+                    <Form.Label>First Name</Form.Label>
+                    <Form.Control
+                        as='input'
+                        type='text'
+                    />
+                </Form.Group>
+                <Form.Group>
+                    <Form.Label>Last Name</Form.Label>
+                    <Form.Control
+                        as='input'
+                        type='text'
+                    />
+                </Form.Group>
+                <Form.Group>
+                    <Form.Label>Email</Form.Label>
+                    <Form.Control
+                        as='input'
+                        type='email'
+                    />
+                </Form.Group>
+                <Form.Group>
+                    <Form.Label>Phone Number</Form.Label>
+                    <Form.Control
+                        as='input'
+                        type='tel'
+                    />
+                </Form.Group>
+                <Form.Group>
+                    <Form.Label>Your Message</Form.Label>
+                    <Form.Control
+                        as='textarea'
+                    />
+                </Form.Group>
+                <Form.Group>
+                    <Button
+                        type="submit"
+                    >
+                        Submit
+                    </Button>
+                </Form.Group>
+            </Form>
+        </React.Fragment>
+    );
+}
 
 function About(props) {
     return (
@@ -63,7 +123,7 @@ function About(props) {
                 <div className="row">
                     <div className="col">
                         <h3>Contact Me</h3>
-                        <p>Contact form coming soon!</p>
+                        <ContactForm />
                     </div>
                 </div>
                 <div className="row">

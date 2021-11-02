@@ -42,7 +42,7 @@ function NewsLetter() {
             <div>
                 <h3>Latest News</h3>
                 <p>Local programmer manages to somehow overcome the odds and complete his portfolio project on time.</p>
-                <p>Live feed coming soon; stay tuned!</p>
+                <p>Live feed not available yet; coming soon after I learn some back-end technologies!</p>
             </div>
         </div>
     );
