@@ -48,7 +48,6 @@ function NewsLetter() {
         <div className="col-12 col-lg-5 newsletter">
             <div>
                 <h3>Latest News</h3>
-                <p>Local programmer manages to somehow overcome the odds and complete his portfolio project on time.</p>
                 <p>Live feed not available yet; coming soon after I learn some back-end technologies!</p>
             </div>
         </div>
@@ -76,19 +75,21 @@ function Featured(props) {
     const featuredDisplay = featured.map(cardItem => {
         return (
             <div className="col-12 col-sm-6 col-md-4">
-                <Card>
-                    <Card.Img
-                        variant="top"
-                        src={baseUrl + cardItem.image}
-                    />
-                    <Card.Body>
-                        <Card.Title>{cardItem.name}</Card.Title>
-                        <Card.Text>{cardItem.summary.length > 150 ? 
-                            cardItem.summary.slice(0,150).trim() + '...'
-                            : cardItem.summary
-                        }</Card.Text>
-                    </Card.Body>
-                </Card>
+                <Link to={cardItem.image2 ? `/shop/${cardItem.id}` : `/blog/${cardItem.id}`}>
+                    <Card>
+                        <Card.Img
+                            variant="top"
+                            src={baseUrl + cardItem.image}
+                        />
+                        <Card.Body>
+                            <Card.Title>{cardItem.name}</Card.Title>
+                            <Card.Text>{cardItem.summary.length > 150 ? 
+                                cardItem.summary.slice(0,150).trim() + '...'
+                                : cardItem.summary
+                            }</Card.Text>
+                        </Card.Body>
+                    </Card>
+                </Link>
             </div>
         );
     });

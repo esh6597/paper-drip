@@ -89,8 +89,8 @@ function Item(props) {
                 </div>
                 <div className="col-12 col-md-6">
                     <h3>Description</h3>
-                    <p>{props.mainItem.description 
-                        ? props.mainItem.description 
+                    <p>{props.mainItem.text 
+                        ? props.mainItem.text 
                         : 'Sorry, nothing here yet!'}</p>
                 </div>
             </React.Fragment>

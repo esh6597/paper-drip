@@ -9,16 +9,16 @@ export const Cart = ( state = {
         let find = state.cart.find(cartItem => cartItem.id === action.itemId);
 
         if (find) {
-            const newQuantity = find.quantity + action.quantity;
+            const newQuantity = parseInt(find.quantity) + parseInt(action.quantity);
             const update = state.cart.map(cartItem => 
-                cartItem.id === action.itemId ? {...cartItem, quantity: newQuantity} 
+                cartItem.id === action.itemId ? {...cartItem, quantity: parseInt(newQuantity)} 
                 : cartItem);
             return {...state, cart: update}
             
         } else {
             const newCartItem = {
                 id: action.itemId,
-                quantity: action.quantity
+                quantity: parseInt(action.quantity)
             };
             return {...state, cart: state.cart.concat(newCartItem)}
         }
