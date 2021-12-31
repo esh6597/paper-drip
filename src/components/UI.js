@@ -1,5 +1,4 @@
-
-import React, { Component } from 'react';
+import React, { Component, useEffect } from 'react';
 
 import variables from '../variables.module.scss';
 
@@ -74,6 +73,7 @@ class UI extends Component {
     }
 
     render() {
+
         const HomePage = () => {
 
             return (
@@ -120,16 +120,16 @@ class UI extends Component {
                 <Sidebar
                     sidebar={
                         <div className='sidebar'>
-                            <Link className="nav-link" to="/home">
+                            <Link className="nav-link" to="/home" onClick={() => this.toggleSidebar()}>
                                 <p>Home</p>
                             </Link>
-                            <Link className="nav-link" to="/about">
+                            <Link className="nav-link" to="/about" onClick={() => this.toggleSidebar()}>
                                 About
                             </Link>
-                            <Link className="nav-link" to="/blog">
+                            <Link className="nav-link" to="/blog" onClick={() => this.toggleSidebar()}>
                                 Blog
                             </Link>
-                            <Link className="nav-link" to="/shop">
+                            <Link className="nav-link" to="/shop" onClick={() => this.toggleSidebar()}>
                                 Shop
                             </Link>
                         </div>
@@ -151,12 +151,12 @@ class UI extends Component {
                     </Button>
                     <div className='content'>
                         <Switch>
-                            <Route path='/home' component={HomePage} />
-                            <Route exact path='/about' render={() => <About />} />
-                            <Route exact path='/blog' render={() => <Blog articles={this.props.articles} />} />
-                            <Route path='/blog/:articleId' component={ArticleWithId} />
-                            <Route exact path='/shop' render={() => <Shop items={this.props.items} />} />
-                            <Route path='/shop/:itemId' component={ItemWithId} />
+                            <Route path='/home' component={HomePage} key={document.location.href} />
+                            <Route exact path='/about' exact render={() => <About />} key={document.location.href} />
+                            <Route exact path='/blog' exact render={() => <Blog articles={this.props.articles} key={document.location.href} />} />
+                            <Route path='/blog/:articleId' component={ArticleWithId} key={document.location.href} />
+                            <Route exact path='/shop' exact render={() => <Shop items={this.props.items} key={document.location.href} />} />
+                            <Route path='/shop/:itemId' component={ItemWithId} key={document.location.href} />
                             <Redirect to='/home' />
                         </Switch>
                         <Footer />

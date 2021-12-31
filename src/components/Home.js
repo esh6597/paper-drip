@@ -150,6 +150,7 @@ function Sections() {
 }
 
 function Home(props) {
+
     return (
         <div>
             <Splash />
