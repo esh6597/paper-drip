@@ -12,7 +12,7 @@ This was a solo project, but I would deeply appreciate community suggestions! Th
 
 ### Features
 
-If you're interested, I've uploaded a [video overview of the site's functionality](https://youtu.be/gLJ3htO4HMI) over on my YouTube channel that details how these are achieved. I'm currently working on polishing and cleaning this project up, so this video is slightly outdated for some of them.
+If you're interested, I've uploaded a [video overview of the site's functionality](https://youtu.be/VJM8nNDw8gA) that details how these are achieved. I'm currently working on polishing and cleaning this project up, so this video is slightly outdated for some of them.
 
 Features included:
 
