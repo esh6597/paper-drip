@@ -24,6 +24,18 @@ Features included:
 - Dynamic view--scales to mobile and tablet
 - Original images, designs and visual scheme
 
+### Development Resources
+
+Inside the /resources folder are various non-app files used for development, including:
+
+- PSD file of graphics and icons used
+- Adobe XD prototype of home and color scheme: no flows
+- Site flowchart 1: an older, confusing map of the data
+- Site flowchart 2: a simplified structural overview
+
+Please understand that several changes were made to the overall site structure and data flow as development went on. This was my first time using [diagrams.net](https://www.diagrams.net/) for flowcharts and Adobe XD for a prototype, and these materials will be built upon in 2.0.
+
+
 ### Dependencies
 
 This app is built with JavaScript that transpiles to HTML, but specifically utilizes the following frameworks and libraries:
