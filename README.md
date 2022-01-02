@@ -2,7 +2,7 @@
 
 ![Paper Drip social media image](./public/github-icon.png)
 
-This single-page app was a front end portfolio project dedicated to origami. This version is currently deprecated, and any issues it has will be resolved in 2.0, which includes a back end. If you haven't already, please do check out that project! It's updated to React 16.8+ with new hooks and Redux toolkit.
+This single-page app was a front end portfolio project dedicated to origami. This version is currently deprecated, and any issues it has will be resolved in 2.0, which includes a back end. If you haven't already, please do check it out! Here's a [link to Paper Drip 2.0](https://github.com/esh6597/paper-drip-full). It's updated to React 16.8+ with new hooks and Redux toolkit.
 
 # About
 
@@ -10,7 +10,7 @@ This webpage serves educational origami content and allows users to browse tags 
 
 This was a solo project, but I would deeply appreciate community suggestions! Thanks for taking the time to come see this app.
 
-#### Features
+### Features
 
 If you're interested, I've uploaded a [video overview of the site's functionality](https://youtu.be/gLJ3htO4HMI) over on my YouTube channel that details how these are achieved. I'm currently working on polishing and cleaning this project up, so this video is slightly outdated for some of them.
 
@@ -24,7 +24,7 @@ Features included:
 - Dynamic view--scales to mobile and tablet
 - Original images, designs and visual scheme
 
-#### Dependencies
+### Dependencies
 
 This app is built with JavaScript that transpiles to HTML, but specifically utilizes the following frameworks and libraries:
 
