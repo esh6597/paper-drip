@@ -32,6 +32,7 @@ Inside the /resources folder are various non-app files used for development, inc
 - Adobe XD prototype of home and color scheme: no flows
 - Site flowchart 1: an older, confusing map of the data
 - Site flowchart 2: a simplified structural overview
+- Sample JSON dev server with image files and db.json
 
 Please understand that several changes were made to the overall site structure and data flow as development went on. This was my first time using [diagrams.net](https://www.diagrams.net/) for flowcharts and Adobe XD for a prototype, and these materials will be built upon in 2.0.
 
@@ -46,6 +47,20 @@ This app is built with JavaScript that transpiles to HTML, but specifically util
 - Webpack and Babel for pre-processing
 - React and Redux for UI, application state and data management
 - Web Vitals, Redux-Logger, and JSON server: testing and error logging
+
+# Usage
+
+This project was scaffolded with *npx-create-react-app* and uses react-scripts to launch its development server.
+
+#### Basic Commands
+- Move the /test-server folder in /resources to a separate domain (I personally use a higher directory that also holds project materials)
+- Type *json-server --watch db.json --port 3443* in a bash terminal in the folder to start a server at 3443, the port the app uses for server connection. This *must* be running for the app to display properly.
+- *yarn start* in bash to start development server at port 3001
+- *yarn build* to build a production folder
+
+#### Editing Styles
+- __Do not edit .css files directly;__ they're all automatically generated from .scss files and will be overwritten.
+- *yarn sass* in a separate terminal to begin watching all .scss files and convert them upon change. This isn't necessary to run the test server, but style changes won't automatically update unless this is running.
 
 # Licenses
 

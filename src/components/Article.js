@@ -1,8 +1,8 @@
-import React, { Component, useState } from 'react';
+import React, { useState } from 'react';
+import ReactHtmlParser from 'react-html-parser';
 import { baseUrl } from '../shared/baseUrl';
 import { Loading } from './Loading';
-import { BsFillPlusCircleFill, BsFillDashCircleFill,
-    BsFillHandThumbsUpFill, BsFillHandThumbsDownFill } from 'react-icons/bs';
+import { BsFillHandThumbsUpFill, BsFillHandThumbsDownFill } from 'react-icons/bs';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 
@@ -84,7 +84,7 @@ function Article(props) {
                     <p>{props.mainArticle.summary}</p>
                 </div>
                 <div className="col-12">
-                    <p>{props.mainArticle.text}</p>
+                    { ReactHtmlParser(props.mainArticle.text) }
                 </div>
             </React.Fragment>
         );

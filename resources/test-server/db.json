@@ -1,0 +1,298 @@
+{
+  "articles": [
+    {
+      "id": 1,
+      "name": "Welcome to my test article!",
+      "date": "2021-09-20T03:21:45Z",
+      "summary": "A brief test article introducing the site.",
+      "featured": true,
+      "text": "<p>Here's some HTML</p><p>Another line!</p>",
+      "image": "media/images/normal-roses.jpg",
+      "tags": [
+        "info"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Here's another article.",
+      "date": "2021-09-20T03:33:16Z",
+      "summary": "",
+      "featured": false,
+      "text": "",
+      "image": "media/images/shop.png",
+      "tags": [
+        "tutorial"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Oof, yet another article.",
+      "date": "2021-10-30T20:52:19Z",
+      "summary": "Yet another article to test formatting issues.",
+      "featured": false,
+      "text": "",
+      "image": "media/images/yellow-boutonniere.jpg",
+      "tags": [
+        "info",
+        "tutorial"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "I didn't name the next article.",
+      "date": "2021-10-30T20:52:51Z",
+      "summary": "WOAH, IS THIS A NEW ROW?????",
+      "featured": true,
+      "text": "",
+      "image": "media/images/blue-corsage-open.jpg",
+      "tags": [
+        "tutorial"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Article Title 5",
+      "date": "2021-10-30T20:52:58Z",
+      "summary": "",
+      "featured": false,
+      "text": "",
+      "image": "media/images/yellow-corsage.png",
+      "tags": [
+        "info"
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Do not read this text.",
+      "date": "2021-10-30T20:53:07Z",
+      "summary": "",
+      "featured": false,
+      "text": "",
+      "image": "media/images/blue-boutonniere.png",
+      "tags": [
+        "tutorial"
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": 1,
+      "name": "Test Crane",
+      "date": "2021-09-20T03:21:45Z",
+      "summary": "A simple origami crane that is testing new features.",
+      "featured": true,
+      "price": 3.5,
+      "quantity": 3,
+      "text": "",
+      "image": "media/images/red-boutonniere.jpg",
+      "image2": "media/images/red-boutonniere.jpg",
+      "image3": "media/images/red-boutonniere.jpg",
+      "image4": "media/images/red-boutonniere.jpg",
+      "image5": "media/images/red-boutonniere.jpg",
+      "tags": []
+    },
+    {
+      "id": 2,
+      "name": "Test Water Balloon",
+      "date": "2021-09-20T03:32:14Z",
+      "summary": "A simple water balloon to test new features.",
+      "featured": false,
+      "price": 8,
+      "quantity": 0,
+      "text": "",
+      "image": "media/images/spiky-ball-table.jpg",
+      "image2": "media/images/spiky-ball-table.jpg",
+      "image3": "media/images/spiky-ball-table.jpg",
+      "image4": "media/images/spiky-ball-table.jpg",
+      "image5": "media/images/spiky-ball-table.jpg",
+      "tags": [
+        "bad"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Deep Fried Roses",
+      "date": "2021-10-31T05:13:13Z",
+      "summary": "The only downside to these roses is their product image! Only the image is deep fried since I can't find anything better.",
+      "featured": true,
+      "price": 6.9,
+      "quantity": 9,
+      "text": "",
+      "image": "media/images/deep-fried.png",
+      "image2": "media/images/deep-fried.png",
+      "image3": "media/images/deep-fried.png",
+      "image4": "media/images/deep-fried.png",
+      "image5": "media/images/deep-fried.png",
+      "tags": []
+    },
+    {
+      "id": 4,
+      "name": "Bad Roses",
+      "date": "2021-10-31T05:23:34Z",
+      "summary": "Like the Deep Fried Roses, but worse! No stems, leaves or calyx. Rushed, usually!",
+      "featured": false,
+      "price": 0.69,
+      "quantity": 9000000,
+      "text": "",
+      "image": "media/images/bad-roses.png",
+      "image2": "media/images/bad-roses.png",
+      "image3": "media/images/bad-roses.png",
+      "image4": "media/images/bad-roses.png",
+      "image5": "media/images/bad-roses.png",
+      "tags": [
+        "bad"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Cool Rose",
+      "date": "2021-10-31T05:26:39Z",
+      "summary": "Wow, what a cool rose!",
+      "featured": true,
+      "price": 5,
+      "quantity": 0,
+      "text": "",
+      "image": "media/images/cool-rose.png",
+      "image2": "media/images/cool-rose.png",
+      "image3": "media/images/cool-rose.png",
+      "image4": "media/images/cool-rose.png",
+      "image5": "media/images/cool-rose.png",
+      "tags": [
+        "cool"
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Fireworks Toy",
+      "date": "2021-10-31T05:32:14Z",
+      "summary": "The perfect paper toy for stimmers and fidgeters alike! Pretty quiet, for the most part.",
+      "featured": true,
+      "price": 8,
+      "quantity": 10,
+      "text": "",
+      "image": "media/images/fireworks.png",
+      "image2": "media/images/fireworks.png",
+      "image3": "media/images/fireworks.png",
+      "image4": "media/images/fireworks.png",
+      "image5": "media/images/fireworks.png",
+      "tags": []
+    },
+    {
+      "id": 7,
+      "name": "Why?",
+      "date": "2021-10-31T05:45:29Z",
+      "summary": "Why would you want to buy this?",
+      "featured": false,
+      "price": 1000,
+      "quantity": 1,
+      "text": "",
+      "image": "media/images/trash.png",
+      "image2": "media/images/trash.png",
+      "image3": "media/images/trash.png",
+      "image4": "media/images/trash.png",
+      "image5": "media/images/trash.png",
+      "tags": [
+        "bad",
+        "cool"
+      ]
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "articleId": 1,
+      "likes": 30,
+      "dislikes": 25,
+      "author": "Erin H",
+      "date": "2021-09-20T03:36:51Z",
+      "summary": "This is a very controversial statement. Good luck!"
+    },
+    {
+      "id": 2,
+      "articleId": 2,
+      "likes": 10,
+      "dislikes": 3,
+      "author": "Erin H",
+      "date": "2021-09-20T03:42:32Z",
+      "summary": "Me likey this word blob. Me likey this button presser. Mouse."
+    },
+    {
+      "articleId": 1,
+      "likes": 0,
+      "dislikes": 0,
+      "author": "Erin H",
+      "date": "2021-11-02T01:06:50.953Z",
+      "summary": "Wow, a dynamically added comment!",
+      "id": 3
+    },
+    {
+      "articleId": 1,
+      "likes": 0,
+      "dislikes": 0,
+      "author": "Not Erin H",
+      "date": "2021-11-02T01:19:10.813Z",
+      "summary": "Nice, another dynamically added comment!",
+      "id": 4
+    },
+    {
+      "articleId": 1,
+      "likes": 0,
+      "dislikes": 0,
+      "author": "Erin H",
+      "date": "2021-11-02T01:20:58.968Z",
+      "summary": "Just kidding, it was me last time.",
+      "id": 5
+    },
+    {
+      "articleId": 2,
+      "likes": 0,
+      "dislikes": 0,
+      "author": "Jared",
+      "date": "2021-11-02T01:23:21.983Z",
+      "summary": "Sorry, I'm illiterate.",
+      "id": 6
+    },
+    {
+      "articleId": 3,
+      "likes": 0,
+      "dislikes": 0,
+      "author": "How do computers work?",
+      "date": "2021-11-02T01:24:00.131Z",
+      "summary": "Bob Dan",
+      "id": 7
+    },
+    {
+      "articleId": 6,
+      "likes": 0,
+      "dislikes": 0,
+      "author": "Erin H",
+      "date": "2021-11-02T06:45:02.518Z",
+      "summary": "Here's a new comment!",
+      "id": 8
+    }
+  ],
+  "reviews": [
+    {
+      "id": 1,
+      "itemId": 1,
+      "name": "A negative review.",
+      "rating": 3,
+      "likes": 2,
+      "dislikes": 4,
+      "author": "Erin H",
+      "date": "2021-09-20T03:39:18Z",
+      "summary": "This crane was terrible. It wasn't even a crane! Plus, whoever folded it was very sloppy."
+    },
+    {
+      "id": 2,
+      "itemId": 2,
+      "name": "Origami's biggest hit!",
+      "rating": 1,
+      "likes": 8,
+      "dislikes": 0,
+      "author": "Erin H",
+      "date": "2021-09-20T03:40:51Z",
+      "summary": "Wow, the paper is gorgeous! The single water balloon I received was a huge hit at my house party! It's clearly handmade."
+    }
+  ]
+}

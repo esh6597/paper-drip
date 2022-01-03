@@ -36,7 +36,7 @@ function BlogLoader(props) {
                                 }</Card.Text>
                             </Card.Body>
                             <Card.Body>
-                                <p className="bottom">{article.tag.toUpperCase()}</p>
+                                <p className="bottom">{article.tags.join(' | ').toUpperCase()}</p>
                             </Card.Body>
                         </Card>
                     </Link>
@@ -50,7 +50,7 @@ function BlogLoader(props) {
             </React.Fragment>
         );
     } else {
-        const filtered = props.articles.filter(article => article.tag === props.tag);
+        const filtered = props.articles.filter(article => article.tags.includes(props.tag));
         const articles = filtered.map(article => {
             return (
                 <div key={article.id} className="col-12 col-md-6 col-lg-4">
@@ -64,7 +64,7 @@ function BlogLoader(props) {
                             }</Card.Text>
                         </Card.Body>
                         <Card.Body>
-                            <p className="bottom">{article.tag.toUpperCase()}</p>
+                            <p className="bottom">{article.tags.join(' | ').toUpperCase()}</p>
                         </Card.Body>
                     </Card>
                 </div>
