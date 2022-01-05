@@ -53,8 +53,7 @@ This app is built with JavaScript that transpiles to HTML, but specifically util
 This project was scaffolded with *npx-create-react-app* and uses react-scripts to launch its development server.
 
 #### Basic Commands
-- Move the /test-server folder in /resources to a separate domain (I personally use a higher directory that also holds project materials)
-- Type *json-server --watch db.json --port 3443* in a bash terminal in the folder to start a server at 3443, the port the app uses for server connection. This *must* be running for the app to display properly.
+- Type *json-server --watch db.json --port 3443* in a bash terminal in the /test-server folder to start a server at 3443, the port the app uses for server connection. This *must* be running for the app to display properly.
 - *yarn start* in bash to start development server at port 3001
 - *yarn build* to build a production folder
 

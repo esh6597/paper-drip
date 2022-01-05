@@ -2,11 +2,11 @@
   "articles": [
     {
       "id": 1,
-      "name": "Welcome to my test article!",
+      "name": "Welcome!",
       "date": "2021-09-20T03:21:45Z",
-      "summary": "A brief test article introducing the site.",
+      "summary": "A brief intro to the site--if you're new, check this out!",
       "featured": true,
-      "text": "<p>Here's some HTML</p><p>Another line!</p>",
+      "text": "<p>Hey, thanks for stopping by. Paper Drip is just a funky little website built by a single guy who loves origami. It originally came about as a coding project, but it ended up really reconnecting me with a hobby I've loved since childhood. Here, I post little blurbs on the blog section with cool new techniques or origami discoveries. I plan on sharing a few models I've designed as well, starting with a <strong>gridless</strong> angled rose, definitely inspired by Toshikazu Kawasaki's model. It's a one-person show, so I'm really flattered you checked this out, let alone clicked on and actually read this welcome article!</p><img class=\"article-image\" src=\"http://localhost:3443/media/images/blog.png\" alt=\"A bundle of gridless roses in various red colors\"><p> If you're new here, feel free to register for an account! You can fill out as much or as little info as you'd like, and you'll never receive any emails that you don't manually opt into in your account settings. Registering allows you to post, comment, review or even share your origami creations! Otherwise, lurkers are totally cool, too.</p>",
       "image": "media/images/normal-roses.jpg",
       "tags": [
         "info"

@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom'
 
 function ShopLoader(props) {
 
-    if (props.isLoading) {  // Catch errors
+    if (props.isLoading) {
         return (
             <Loading />
         );
