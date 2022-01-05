@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import variables from '../variables.module.scss';
+import variables from '../sass/abstracts/_variables.module.scss';
 
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';

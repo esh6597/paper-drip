@@ -1,3 +1,15 @@
+:export {
+  colorWarmLight: #f68e86;
+  colorWarm: #dd5964;
+  colorWarmDark: #9e4450;
+  colorCoolLight: #88d5cd;
+  colorCool: #33b8b8;
+  colorCoolDark: #319ea2;
+  colorText: #40373a;
+  colorBackground: #fcedc9;
+  colorWhite: #fff;
+}
+
 * h1 {
   font: 500 30px/1.5 "Roboto", sans-serif;
 }

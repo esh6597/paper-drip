@@ -1,6 +1,6 @@
 import React from 'react';
 import FadingBalls from 'react-cssfx-loading/lib/FadingBalls';
-import variables from '../variables.module.scss';
+import variables from '../sass/abstracts/_variables.module.scss';
 
 export const Loading = () => {
     return (

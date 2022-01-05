@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 
 import { BsSearch, BsPersonFill, BsCartFill, 
     BsFillPlusCircleFill, BsFillDashCircleFill } from "react-icons/bs";
-import variables from '../variables.module.scss';
+import variables from '../sass/abstracts/_variables.module.scss';
 import Collapse from 'react-bootstrap/Collapse';
 import Button from 'react-bootstrap/Button';
 
