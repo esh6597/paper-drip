@@ -1,0 +1,85 @@
+//Top bar
+
+.toolbar {
+  position: sticky;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  top: 0;
+  left: 0;
+  z-index: 4;
+  padding-left: 36px;
+  padding-right: 3%;
+  background-color: $color-cool-dark;
+  height: 40px;
+  width: 100%;
+  color: $color-white;
+  font-size: 22px;
+  text-align: right;
+
+  * {
+      display: inline;
+  }
+}
+
+
+//Cart component
+
+.cart-wrapper {
+  position: absolute;
+  right: 0;
+  top: 40px;
+  z-index: 4;
+  background-color: $color-cool-light;
+  width: 40vh;
+
+  .cart-body {
+      background-color: $color-background;
+      color: $color-text;
+      margin: 1vh;
+      padding: 1vh;
+
+      button {
+          background-color: $color-warm;
+          border-color: $color-warm-dark;
+
+          &:hover {
+              background-color: $color-warm-light;
+          }
+
+          &:active {
+              background-color: $color-warm-dark;
+          }
+      }
+
+      .cart-title {
+          text-align: left;
+          justify-content: space-between;
+      }
+
+      .cart-quantity {
+          text-align: center;
+          border-left: 1px solid $color-cool-light;
+
+          form {
+              svg {
+                  margin: 0 5px;
+                  color: $color-warm;
+              }
+
+              input {
+                  width: 50px;
+              }
+          }
+      }
+
+      .cart-summary {
+          font: $font-text-small;
+          margin-top: 5px;
+      }
+      
+      p {
+          margin: 0;
+      }
+  }
+}

@@ -1,0 +1,30 @@
+//Popup sidebar
+
+.sidebar {
+  box-sizing: border-box;
+  border-top: 40px solid $color-cool-dark;
+  padding-top: 6vh;
+
+  .nav-link {
+      text-decoration: none;
+      font: $font-text-bold;
+      color: $color-background;
+      background-color: $color-warm;
+      padding: 2vh 8vh 2vh 3vh;
+      filter: brightness(100%);
+      transition: filter .2s ease-in-out;
+  
+      &:hover {
+          filter: brightness(90%);
+          transition: filter .2s ease-in-out;
+      }
+
+      p {
+          text-decoration: none;
+          font: $font-text-thick;
+          color: $color-background;
+          margin: 0;
+      }
+  }
+
+}

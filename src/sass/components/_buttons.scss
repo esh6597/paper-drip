@@ -1,0 +1,19 @@
+//For sidebar toggler
+
+.sidebarButton {
+  position: fixed;
+  display: absolute;
+  width: 36px;
+  height: 40px;
+  top: 0;
+  left: 0;
+  background-color: $color-cool-dark;
+  border: none;
+  padding: 0;
+  color: $color-text;
+  z-index: 4;
+
+  * {
+      color: $color-white;
+  }
+}

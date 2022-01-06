@@ -1,51 +1,33 @@
-.splash {
-  display: block;
-  position: relative;
-  margin-bottom: 3vh;
-  background-image: radial-gradient($color-cool-light, $color-cool-dark);
-  color: $color-background;
-  height: 60vh;
-  overflow: hidden;
-
-  h2 {
-      margin: 0;
-      padding: 0;
-      line-height: 40px;
-      text-align: right;
+.blog {
+  .header {
+      background-image: linear-gradient(to right, $color-warm-dark, $color-cool-light, $color-cool-dark);
   }
-}
 
+  .btn-outline-primary {
+      border-color: $color-cool-dark;
+      color: $color-cool-dark;
+      margin: 3vh 0 5vh 0;
+  }
 
-//Newsletter
-
-.newsletter {  
-
-  * {
-      background-color: $color-warm;
+  .btn-check:checked+.btn-outline-primary {
+      background-color: $color-cool-dark;
+      border-color: $color-cool-dark;
       color: $color-background;
-      width: 95%;
-      margin: 2.5%;
-      padding: 1vh;
-      border-radius: 10px;
   }
-}
 
-//Featured section
-
-.featured {
-  margin-top: 2vh;
-
-  h3 {
-      text-align: center;
+  .btn-check:hover+.btn-outline-primary {
+      background-color: $color-cool-dark;
+      border-color: $color-cool-dark;
+      color: $color-background;
   }
 
   .card {
       margin: 10px;
-      background-color: $color-white;
-      border: none;
+      background-color: rgba(0,0,0,0);
+      border: 1px solid $color-cool-dark;
       opacity: 70%;
       align-items: center;
-      height: 30vh;
+      height: 95%;
       width: 100%;
   
       &:hover {
@@ -69,6 +51,7 @@
       .card-text {
           font: $font-text-small;
           object-fit: cover;
+          height: 60%;
           align-content: center;
       }
 
@@ -87,14 +70,5 @@
           margin-bottom: 10px;
       }
   }
-}
 
-//Division about sections
-
-.sections {
-  color: $color-cool;
-
-  h3 {
-      text-align: center;
-  }
 }

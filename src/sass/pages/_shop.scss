@@ -1,0 +1,83 @@
+.shop {
+  .header {
+      background-image: linear-gradient(to right, $color-cool-dark, $color-warm-light, $color-warm-dark);
+  }
+  .card {
+      margin: 10px;
+      background-color: rgba(0,0,0,0);
+      border: 1px solid $color-warm-dark;
+      opacity: 70%;
+      align-items: center;
+      height: 95%;
+      width: 95%;
+  
+      &:hover {
+          opacity: 100%;
+      }
+  
+      .card-title {
+          text-align: center;
+          margin-top: 2.5vh;
+          font: $font-text-bold;
+          color: $color-text;
+      }
+  
+      .card-img-top {
+          border-radius: 0%;
+          width: 100%;
+          height: 50%;
+          object-fit: cover;
+          background-color: $color-warm-light;
+      }
+  
+      .card-text {
+          font: $font-text-small;
+          object-fit: cover;
+          height: 60%;
+          align-content: center;
+      }
+
+      .card-body {
+          padding: 0 2vh;
+      }
+      
+      .bottom {
+          color: $color-warm-dark;
+          font: $font-text-small;
+          position: absolute;
+          left: 50%;
+          bottom: 0;
+          transform: translate(-50%, -50%);
+          text-align: center;
+          margin-bottom: 10px;
+      }
+  }
+
+  .btn-outline-primary {
+      border-color: $color-warm-dark;
+      color: $color-warm-dark;
+      margin: 0;
+  }
+
+  .btn-check:checked+.btn-outline-primary {
+      background-color: $color-warm-dark;
+      border-color: $color-warm-dark;
+      color: $color-background;
+  }
+
+  .btn-check:hover+.btn-outline-primary {
+      background-color: $color-warm-dark;
+      border-color: $color-warm-dark;
+      color: $color-background;
+  }
+
+  #sort * {
+      display: inline;
+      width: 50%;
+  }
+
+  .control {
+      margin: 3vh 0 3vh 0;
+      line-height: 3;
+  }
+}

@@ -1,0 +1,16 @@
+.loading {
+  position: relative;
+
+  .FadingBalls_fading-balls__1483H {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+  }
+
+  p {
+      padding-top: 8vh;
+      font: $font-text-bold;
+      color: $color-warm-light;
+  }
+}

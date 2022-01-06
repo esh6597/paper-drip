@@ -1,0 +1,23 @@
+.about {
+  background-image: linear-gradient(to right, $color-warm-light, $color-cool-light);
+}
+
+.about-body {
+  h3 {
+      color: $color-warm-dark;
+  }
+  .me {
+      width: 90%;
+      height: 90%;
+      object-fit: cover;
+      border-radius: 1vh;
+  }
+
+  .btn-primary {
+      border: none;
+      color: $color-white;
+      background-color: $color-cool-dark;
+      margin: 0;
+      margin: 1vh;
+  }
+}

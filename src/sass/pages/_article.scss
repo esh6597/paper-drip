@@ -1,0 +1,28 @@
+.article {
+  .item-image {
+      img {
+          object-fit: cover;
+          overflow: hidden;
+          width: 100%;
+          height: 50vh;
+      }
+      margin-bottom: 5vh;
+  }
+
+  .author {
+      background-color: $color-cool-light;
+      padding: 2vh 2vh;
+  
+      p {
+          margin-bottom: 0;
+      }
+  }
+
+  .title {
+      padding-left: 3vh;
+  }
+
+  .col-12 {
+      margin-bottom: 5vh;
+  }
+}

@@ -1,0 +1,47 @@
+.item {
+
+  h1 {
+      text-align: center;
+      margin: 5vh;
+  }
+
+  .number-display {
+      width: 50px;
+  }
+
+  form svg {
+      margin: 5px;
+  }
+
+  .item-image {
+      img {
+          width: 90%;
+          margin-bottom: 3vh;
+          background-color: $color-cool-light;
+      }
+      text-align: center;
+  }
+
+  .quantity-display {
+      display: inline;
+
+      input {
+          width: 2vh;
+      }
+  }
+
+  .submit {
+      input {
+          background-color: $color-warm;
+          border-color: $color-warm-dark;
+      }        
+
+      input:hover {
+          background-color: $color-warm-light;
+      }
+      
+      input:active {
+          background-color: $color-warm-dark;
+      }
+  }
+}

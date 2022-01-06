@@ -1,0 +1,32 @@
+//Base text
+
+h1 {
+  font: $font-title-bold;
+}
+
+h2 {
+  font: $font-title-large;
+  font-style: oblique;
+  margin: 0;
+}
+
+h3 {
+  font: $font-text-thick;
+  margin: 0 0 3vh 0;
+}
+
+p {
+  font: $font-text-light;
+  color: $color-text;
+}
+
+a {
+  text-decoration: none;
+  color: $color-warm;
+  transition: color 0.2s ease-in-out;
+
+  &:hover {
+      color: $color-warm-light;
+      transition: color 0.2s ease-in-out;
+  }
+}
