@@ -4,10 +4,14 @@ import { baseUrl } from '../shared/baseUrl';
 
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
-function ContactForm(props) {
+
+//Contact form declared first to be used in actual About component below
+function ContactForm() {
+
+    //Contact form state
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [email, setEmail] = useState('');
@@ -15,10 +19,14 @@ function ContactForm(props) {
     const [feedback, setFeedback] = useState('');
 
     const handleSubmit = (event, firstName, lastName, email, phoneNum, feedback) => {
+        //Prevent refresh
         event.preventDefault();
+
+        //Form currently does nothing; this is placeholder code
         console.log('Thanks for your feedback!');
         console.log(firstName, lastName, email, phoneNum, feedback);
 
+        //Reset values after submission
         setFirstName('');
         setLastName('');
         setEmail('');
@@ -32,9 +40,9 @@ function ContactForm(props) {
                 noValidate
                 onSubmit={e => handleSubmit(e, firstName, lastName, email, phoneNum, feedback)}
             >
-                <div className="row">
-                    <div className="col-12 col-md-6">
-                        <Form.Group controlId="firstName" as={Row}>
+                <div className='row'>
+                    <div className='col-12 col-md-6'>
+                        <Form.Group controlId='firstName' as={Row}>
                             <Form.Label column sm={3}>First Name</Form.Label>
                             <Col sm={9}>
                                 <Form.Control
@@ -46,8 +54,8 @@ function ContactForm(props) {
                             </Col>
                         </Form.Group>
                     </div>
-                    <div className="col-12 col-md-6">
-                        <Form.Group controlId="lastName" as={Row}>
+                    <div className='col-12 col-md-6'>
+                        <Form.Group controlId='lastName' as={Row}>
                             <Form.Label column sm={3}>Last Name</Form.Label>
                             <Col sm={9}>
                                 <Form.Control
@@ -60,9 +68,9 @@ function ContactForm(props) {
                         </Form.Group>
                     </div>
                 </div>
-                <div className="row">
-                    <div className="col-12 col-md-7">
-                        <Form.Group controlId="email" as={Row}>
+                <div className='row'>
+                    <div className='col-12 col-md-7'>
+                        <Form.Group controlId='email' as={Row}>
                             <Form.Label column sm={3}>Email</Form.Label>
                             <Col sm={9}>
                                 <Form.Control
@@ -74,8 +82,8 @@ function ContactForm(props) {
                             </Col>
                         </Form.Group>
                     </div>
-                    <div className="col-12 col-md-5">
-                        <Form.Group controlId="phoneNum" as={Row}>
+                    <div className='col-12 col-md-5'>
+                        <Form.Group controlId='phoneNum' as={Row}>
                             <Form.Label column sm={3}>Phone</Form.Label>
                             <Col sm={9}>
                                 <Form.Control
@@ -89,9 +97,9 @@ function ContactForm(props) {
                     </div>
                 </div>
     
-                <div className="row">
-                    <div className="col-12">
-                        <Form.Group controlId="feedback">
+                <div className='row'>
+                    <div className='col-12'>
+                        <Form.Group controlId='feedback'>
                             <Form.Label>Your Message</Form.Label>
                             <Form.Control
                                 as='textarea'
@@ -104,7 +112,7 @@ function ContactForm(props) {
                 
                 <Form.Group>
                     <Button
-                        type="submit"
+                        type='submit'
                     >
                         Submit
                     </Button>
@@ -114,18 +122,18 @@ function ContactForm(props) {
     );
 }
 
-function About(props) {
+function About() {
     return (
         <div>
-            <div className="header about">
+            <div className='header about'>
                 <h2>About</h2>
             </div>
-            <div className="container about-body">
-                <div className="row">
-                    <div className="col-12 col-md-5">
-                        <img src={baseUrl + 'media/images/me.jpg'} className="me" />
+            <div className='container about-body'>
+                <div className='row'>
+                    <div className='col-12 col-md-5'>
+                        <img src={baseUrl + 'media/images/me.jpg'} className='me' />
                     </div>
-                    <div className="col-12 col-md-7">
+                    <div className='col-12 col-md-7'>
                         <h3>What the Heck is Paper Drip?</h3>
                         <p>
                             Paper Drip was originally created to practice and eventually showcase my web development 
@@ -140,12 +148,12 @@ function About(props) {
                         </p>
                         <p>
                             This project was created through Node.js and React. It is publicly available through this 
-                            <a href="https://github.com/esh6597/paperdrip"> Github link.</a>
+                            <a href='https://github.com/esh6597/paperdrip'> Github link.</a>
                         </p>
                     </div>
                 </div>
-                <div className="row">
-                    <div className="col-12 col-md-7">
+                <div className='row'>
+                    <div className='col-12 col-md-7'>
                         <h3>About Me</h3>
                         <p style={{fontStyle: 'italic'}}>
                             "A jack of all trades is a master of none, but oftentimes better than a master of one."<br />
@@ -161,12 +169,12 @@ function About(props) {
                             mess of a person. Portfolio links coming soon.
                         </p>                  
                     </div>
-                    <div className="col-12 col-md-5">
-                        <img src={baseUrl + 'media/images/clown-roses.png'} className="me" />
+                    <div className='col-12 col-md-5'>
+                        <img src={baseUrl + 'media/images/clown-roses.png'} className='me' />
                     </div>
                 </div>
-                <div className="row">
-                    <div className="col">
+                <div className='row'>
+                    <div className='col'>
                         <h3>Contact Me</h3>
                         <p>
                             Note: this form currently does nothing, but type away to
@@ -175,17 +183,17 @@ function About(props) {
                         <ContactForm />
                     </div>
                 </div>
-                <div className="row">
-                    <div className="col-12">
+                <div className='row'>
+                    <div className='col-12'>
                         <h3>Like what you see? Check out these sister websites!</h3>
                         <p>Links are currently in progress; expect some jankiness.</p>
                     </div>
                 </div>
-                <div className="row">
-                    <div className="col-12 col-sm-6 col-md-4">
-                        <a href="https://www.youtube.com/channel/UCqsDIfnb7emiIXvb3VXpHVA">
+                <div className='row'>
+                    <div className='col-12 col-sm-6 col-md-4'>
+                        <a href='https://www.youtube.com/channel/UCqsDIfnb7emiIXvb3VXpHVA'>
                             <Card>
-                                <Card.Img variant="top" src={baseUrl + 'media/images/youtube.png'} />
+                                <Card.Img variant='top' src={baseUrl + 'media/images/youtube.png'} />
                                 <Card.Title>Youtube</Card.Title>
                                 <Card.Body>
                                     <Card.Text>Why sift through wordy blog posts when you can watch all of my tutorials for free on Youtube?</Card.Text>
@@ -193,10 +201,10 @@ function About(props) {
                             </Card>
                         </a>
                     </div>
-                    <div className="col-12 col-sm-6 col-md-4">
-                        <a href="">
+                    <div className='col-12 col-sm-6 col-md-4'>
+                        <a href=''>
                             <Card>
-                                <Card.Img variant="top" src={baseUrl + 'media/images/patreon.png'} />
+                                <Card.Img variant='top' src={baseUrl + 'media/images/patreon.png'} />
                                 <Card.Title>Patreon</Card.Title>
                                 <Card.Body>
                                     <Card.Text>Directly support the expansion of this website with just $5 on Patreon and reap SWEET 
@@ -206,10 +214,10 @@ function About(props) {
                             </Card>
                         </a>
                     </div>
-                    <div className="col-12 col-sm-6 col-md-4">
-                        <a href="">
+                    <div className='col-12 col-sm-6 col-md-4'>
+                        <a href=''>
                             <Card>
-                                <Card.Img variant="top" src={baseUrl + 'media/images/portfolio.png'} />
+                                <Card.Img variant='top' src={baseUrl + 'media/images/portfolio.png'} />
                                 <Card.Title>Portfolio</Card.Title>
                                 <Card.Body>
                                     <Card.Text>Hiring, or just curious? Check out my non-origami creations 
