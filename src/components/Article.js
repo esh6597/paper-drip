@@ -83,7 +83,7 @@ function Article(props) {
                     <h1>{props.mainArticle.name}</h1>
                     <p>{props.mainArticle.summary}</p>
                 </div>
-                <div className="col-12">
+                <div className="col-12 text">
                     { ReactHtmlParser(props.mainArticle.text) }
                 </div>
             </React.Fragment>

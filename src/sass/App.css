@@ -392,6 +392,19 @@ a:hover {
 .article .col-12 {
   margin-bottom: 5vh;
 }
+.article .text p {
+  display: block;
+  width: 90%;
+  margin: 0 auto;
+}
+.article .article-image {
+  display: block;
+  object-fit: cover;
+  overflow: hidden;
+  width: 60%;
+  height: 50vh;
+  margin: 5vh auto;
+}
 
 .blog .header {
   background-image: linear-gradient(to right, #9e4450, #88d5cd, #319ea2);

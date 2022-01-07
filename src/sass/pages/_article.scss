@@ -25,4 +25,21 @@
   .col-12 {
       margin-bottom: 5vh;
   }
+
+  .text {
+      p {
+          display: block;
+          width: 90%;
+          margin: 0 auto;
+      }
+  }
+
+  .article-image {
+    display: block;
+    object-fit: cover;
+    overflow: hidden;
+    width: 60%;
+    height: 50vh;
+    margin: 5vh auto;
+  }
 }
