@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, createRef } from 'react';
 
 import variables from '../sass/abstracts/_variables.module.scss';
 
@@ -15,6 +15,9 @@ import Blog from './Blog';
 import Shop from './Shop';
 import Item from './Item';
 import Article from './Article';
+
+import { Top } from './TopRef';
+import ScrollToTop from './ScrollToTop';
 
 import { fetchArticles, fetchItems, 
     fetchReviews, fetchComments,
@@ -80,6 +83,8 @@ class UI extends Component {
                 <Home 
                     articles={this.props.articles}
                     items={this.props.items}
+                    top={this.top}
+                    scrollToTop={this.scrollToTop}
                 />
             );
         };
@@ -92,6 +97,8 @@ class UI extends Component {
                     items={this.props.items}
                     reviews={this.props.reviews}
                     updateCart={this.props.updateCart}
+                    top={this.top}
+                    scrollToTop={this.scrollToTop}
                 />
             );
         };
@@ -104,6 +111,8 @@ class UI extends Component {
                     articles={this.props.articles}
                     comments={this.props.comments}
                     postComment={this.props.postComment}
+                    top={this.top}
+                    scrollToTop={this.scrollToTop}
                 />
             );
         };
@@ -120,16 +129,40 @@ class UI extends Component {
                 <Sidebar
                     sidebar={
                         <div className='sidebar'>
-                            <Link className="nav-link" to="/home" onClick={() => this.toggleSidebar()}>
+                            <Link 
+                                className="nav-link" 
+                                to="/home" 
+                                onClick={() => {
+                                    this.toggleSidebar();
+                                }}
+                            >
                                 <p>Home</p>
                             </Link>
-                            <Link className="nav-link" to="/about" onClick={() => this.toggleSidebar()}>
+                            <Link 
+                                className="nav-link" 
+                                to="/about" 
+                                onClick={() => {
+                                    this.toggleSidebar();
+                                }}
+                            >
                                 About
                             </Link>
-                            <Link className="nav-link" to="/blog" onClick={() => this.toggleSidebar()}>
+                            <Link 
+                                className="nav-link" 
+                                to="/blog" 
+                                onClick={() => {
+                                    this.toggleSidebar();
+                                }}
+                            >
                                 Blog
                             </Link>
-                            <Link className="nav-link" to="/shop" onClick={() => this.toggleSidebar()}>
+                            <Link 
+                                className="nav-link" 
+                                to="/shop" 
+                                onClick={() => {
+                                    this.toggleSidebar();
+                                }}
+                            >
                                 Shop
                             </Link>
                         </div>
@@ -146,17 +179,60 @@ class UI extends Component {
                         } 
                     }}
                 >
-                    <Button onClick={() => this.toggleSidebar()} className='sidebarButton'>
+                    <Button 
+                        onClick={() => this.toggleSidebar()} className='sidebarButton'
+                    >
                         <BsList style={{fontSize: 32}} />
                     </Button>
-                    <div className='content'>
+                    <Top />
+                    <ScrollToTop />
+                    <div 
+                        className='content'
+                        ref={this.top}
+                        id='top'
+                    >
                         <Switch>
-                            <Route path='/home' component={HomePage} key={document.location.href} />
-                            <Route exact path='/about' exact render={() => <About />} key={document.location.href} />
-                            <Route exact path='/blog' exact render={() => <Blog articles={this.props.articles} key={document.location.href} />} />
-                            <Route path='/blog/:articleId' component={ArticleWithId} key={document.location.href} />
-                            <Route exact path='/shop' exact render={() => <Shop items={this.props.items} key={document.location.href} />} />
-                            <Route path='/shop/:itemId' component={ItemWithId} key={document.location.href} />
+                            <Route 
+                                path='/home' 
+                                component={HomePage} 
+                                key={document.location.href}
+                            />
+                            <Route 
+                                exact path='/about' 
+                                exact render={() => <About 
+                                    top={this.top}
+                                    scrollToTop={this.scrollToTop}
+                                />} 
+                                key={document.location.href}
+                            />
+                            <Route 
+                                exact path='/blog' 
+                                exact render={() => <Blog 
+                                    articles={this.props.articles} 
+                                    key={document.location.href} 
+                                    top={this.top}
+                                    scrollToTop={this.scrollToTop}
+                                />} 
+                            />
+                            <Route 
+                                path='/blog/:articleId' 
+                                component={ArticleWithId} 
+                                key={document.location.href} 
+                            />
+                            <Route 
+                                exact path='/shop' 
+                                exact render={() => <Shop 
+                                    items={this.props.items} 
+                                    key={document.location.href} 
+                                    top={this.top}
+                                    scrollToTop={this.scrollToTop}
+                                />} 
+                            />
+                            <Route 
+                                path='/shop/:itemId' 
+                                component={ItemWithId} 
+                                key={document.location.href} 
+                            />
                             <Redirect to='/home' />
                         </Switch>
                         <Footer />
