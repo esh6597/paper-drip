@@ -1,1 +1,1 @@
-export const baseUrl = 'http://localhost:3443/';
+export const baseUrl = 'https://paper-drip-json-server.herokuapp.com/';

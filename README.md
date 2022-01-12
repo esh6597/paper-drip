@@ -6,6 +6,9 @@ This single-page app was a front end portfolio project dedicated to origami. Thi
 
 # About
 
+### Come visit it!
+I'm proud to finally announce that Paper Drip is live! You can [visit the website here](https://esh6597.github.io/paper-drip). As of right now there's no hash routing so be prepared for errors upon refreshing due to the code hijacking the URL. Since there's no official back end yet, I quickly deployed a [mock database via Heroku](https://paper-drip-json-server.herokuapp.com/) with JSON-server. Feel free to explore around! If you're interested, here's the [repository for the server](https://github.com/esh6597/paper-drip-json-server).
+
 This webpage serves educational origami content and allows users to browse tags to search for the article or tutorial they need. It's a basic framework for a multi-purpose personal website meant to eventually foster a small community around paper crafts and host some of the other content I make.
 
 This was a solo project, but I would deeply appreciate community suggestions! Thanks for taking the time to come see this app.
