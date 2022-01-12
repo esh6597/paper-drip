@@ -2,7 +2,7 @@
   "name": "paperdrip",
   "version": "1.0.0",
   "private": true,
-  "homepage": "http://esh6597.github.io/paper-drip/home",
+  "homepage": "http://esh6597.github.io/paper-drip",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
