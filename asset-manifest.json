@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/paper-drip/static/css/main.ba7d2003.chunk.css",
-    "main.js": "/paper-drip/static/js/main.bdf1e24c.chunk.js",
-    "main.js.map": "/paper-drip/static/js/main.bdf1e24c.chunk.js.map",
+    "main.js": "/paper-drip/static/js/main.ad09c29a.chunk.js",
+    "main.js.map": "/paper-drip/static/js/main.ad09c29a.chunk.js.map",
     "runtime-main.js": "/paper-drip/static/js/runtime-main.dae0f43a.js",
     "runtime-main.js.map": "/paper-drip/static/js/runtime-main.dae0f43a.js.map",
     "static/css/2.5d45beda.chunk.css": "/paper-drip/static/css/2.5d45beda.chunk.css",
@@ -20,6 +20,6 @@
     "static/css/2.5d45beda.chunk.css",
     "static/js/2.62f0f986.chunk.js",
     "static/css/main.ba7d2003.chunk.css",
-    "static/js/main.bdf1e24c.chunk.js"
+    "static/js/main.ad09c29a.chunk.js"
   ]
 }
