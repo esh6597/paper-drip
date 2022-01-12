@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/paper-drip/home/static/css/main.e49c38ed.chunk.css",
+    "main.css": "/paper-drip/home/static/css/main.ba7d2003.chunk.css",
     "main.js": "/paper-drip/home/static/js/main.bdf1e24c.chunk.js",
     "main.js.map": "/paper-drip/home/static/js/main.bdf1e24c.chunk.js.map",
     "runtime-main.js": "/paper-drip/home/static/js/runtime-main.a1a89a09.js",
@@ -12,14 +12,14 @@
     "static/js/3.bcecdd07.chunk.js.map": "/paper-drip/home/static/js/3.bcecdd07.chunk.js.map",
     "index.html": "/paper-drip/home/index.html",
     "static/css/2.5d45beda.chunk.css.map": "/paper-drip/home/static/css/2.5d45beda.chunk.css.map",
-    "static/css/main.e49c38ed.chunk.css.map": "/paper-drip/home/static/css/main.e49c38ed.chunk.css.map",
+    "static/css/main.ba7d2003.chunk.css.map": "/paper-drip/home/static/css/main.ba7d2003.chunk.css.map",
     "static/js/2.62f0f986.chunk.js.LICENSE.txt": "/paper-drip/home/static/js/2.62f0f986.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.a1a89a09.js",
     "static/css/2.5d45beda.chunk.css",
     "static/js/2.62f0f986.chunk.js",
-    "static/css/main.e49c38ed.chunk.css",
+    "static/css/main.ba7d2003.chunk.css",
     "static/js/main.bdf1e24c.chunk.js"
   ]
 }
