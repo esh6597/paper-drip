@@ -75,14 +75,14 @@ a:hover {
   background-color: rgba(0, 0, 0, 0);
   border: none;
   border-radius: 1vh;
-  opacity: 70%;
+  opacity: 0.7;
   align-items: center;
   transition: opacity 0.2s ease-in-out;
   padding: 0;
   overflow: hidden;
 }
 .card:hover {
-  opacity: 100%;
+  opacity: 1;
   transition: opacity 0.2s ease-in-out;
 }
 .card .card-title {
@@ -324,13 +324,13 @@ a:hover {
   margin: 10px;
   background-color: #fff;
   border: none;
-  opacity: 70%;
+  opacity: 0.7;
   align-items: center;
   height: 30vh;
   width: 100%;
 }
 .featured .card:hover {
-  opacity: 100%;
+  opacity: 1;
 }
 .featured .card .card-title {
   text-align: center;
@@ -428,13 +428,13 @@ a:hover {
   margin: 10px;
   background-color: rgba(0, 0, 0, 0);
   border: 1px solid #319ea2;
-  opacity: 70%;
+  opacity: 0.7;
   align-items: center;
   height: 95%;
   width: 100%;
 }
 .blog .card:hover {
-  opacity: 100%;
+  opacity: 1;
 }
 .blog .card .card-title {
   text-align: center;
@@ -475,13 +475,13 @@ a:hover {
   margin: 10px;
   background-color: rgba(0, 0, 0, 0);
   border: 1px solid #9e4450;
-  opacity: 70%;
+  opacity: 0.7;
   align-items: center;
   height: 95%;
   width: 95%;
 }
 .shop .card:hover {
-  opacity: 100%;
+  opacity: 1;
 }
 .shop .card .card-title {
   text-align: center;

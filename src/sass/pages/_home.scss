@@ -43,13 +43,13 @@
       margin: 10px;
       background-color: $color-white;
       border: none;
-      opacity: 70%;
+      opacity: .7;
       align-items: center;
       height: 30vh;
       width: 100%;
   
       &:hover {
-          opacity: 100%;
+          opacity: 1;
       }
   
       .card-title {
